@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# PENDENTE: após definir o domínio, adicionar:
+# Sitemap: https://SEU-DOMINIO/sitemap.xml
