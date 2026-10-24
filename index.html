@@ -5,22 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Estilo Nativo Paisagismo | Paisagismo, jardins verticais e loja de plantas em Ourinhos/SP</title>
 <meta name="description" content="Paisagismo, jardins verticais com rega programada, irrigação automática, manutenção de jardins e loja de plantas, vasos, adubos e materiais para jardinagem em Ourinhos/SP. Fale pelo WhatsApp.">
-<meta name="theme-color" content="#203D2D">
+<meta name="theme-color" content="#EFF1EA">
 <!-- PENDENTE: adicionar <link rel="canonical" href="https://SEU-DOMINIO/"> quando houver domínio definitivo -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Estilo Nativo Paisagismo">
 <meta property="og:title" content="Estilo Nativo Paisagismo | Natureza que transforma, espaços que inspiram">
 <meta property="og:description" content="Paisagismo, jardins verticais, irrigação automática, manutenção e loja de jardinagem em Ourinhos/SP.">
-<!-- PENDENTE: trocar por URL absoluta (https://SEU-DOMINIO/projeto-jardim-vertical-2.png) após publicar -->
-<meta property="og:image" content="projeto-jardim-vertical-2.png">
+<!-- PENDENTE: trocar por URL absoluta (https://SEU-DOMINIO/jardim-vertical-piscina.webp) após publicar -->
+<meta property="og:image" content="jardim-vertical-piscina.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon-180.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;600&family=Urbanist:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..600&family=Poppins:wght@400;500;600&display=swap">
 <link rel="preload" as="image" href="hero-folhagem.webp" fetchpriority="high">
 
 <script>
@@ -47,7 +47,11 @@
     "postalCode": "19901-010",
     "addressCountry": "BR"
   },
-  "sameAs": ["https://www.instagram.com/estilonativopaisagismo/"]
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "14:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/estilonativopaisagismo/", "https://www.facebook.com/estilonativopaisagismo/"]
 }
 </script>
 
@@ -60,100 +64,114 @@
   --moss:#344C35;
   --btn:#2C3A22;
   --sage:#A8B69A;
-  --sage-soft:#A9D18E;
   --mint:#DCE5D5;
-  --bg:#F3F2E9;
+  --bg:#EFF1EA;            /* osso esverdeado, sem amarelo */
+  --bg-2:#E4E9DD;          /* degrau de tom para separar superfícies */
   --bg-hero:#EEF0E4;
-  --paper:#FCFCF7;
-  --ink:#20281F;
-  --ink-2:#28311F;
-  --muted:#5F6A5D;
+  --paper:#F8F9F4;
+  --ink:#1E271D;
+  --muted:#4D584C;         /* só para notas secundárias */
   --accent:#C6D2A6;
-  --sun:#E9B824;           /* tom do sol do logotipo, usado com parcimônia */
-  --line:rgba(32,61,45,.14);
+  --wa:#1F6E43;
 
   --f-display:"Brygada 1918", "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --f-body:"Poppins", "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --f-tag:"Urbanist", "Poppins", system-ui, sans-serif;
 
-  --ease:cubic-bezier(.2,.7,.1,1);
-  --ease-soft:cubic-bezier(.4,.1,.2,1);
+  /* escala: 5 tamanhos de leitura + o título do hero */
+  --fs-h2:clamp(32px, 4.3vw, 62px);
+  --fs-h3:clamp(22px, 1.8vw, 27px);
+  --fs-lead:19px;
+  --fs-body:17px;
+  --fs-small:14px;
+
+  --ease:cubic-bezier(.16,1,.3,1);
 
   /* unidade fluida do hero: referência 1440 x 1032 */
   --u:max(min(100vw / 1440, 100svh / 1032), 100vw / 1440 * .72);
 
   --gutter:clamp(16px, 4vw, 64px);
   --maxw:1320px;
-  --radius:24px;
+  --radius:20px;
   --bar-h:0px;
+
+  /* ícones de seta desenhados (sem caracteres unicode) */
+  --i-arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 14 14 6M7.5 6H14v6.5'/%3E%3C/svg%3E");
+  --i-down:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 4v12M5 11l5 5 5-5'/%3E%3C/svg%3E");
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip;scrollbar-color:var(--sage) var(--bg)}
 body{
   margin:0;background:var(--bg);color:var(--ink);
-  font:400 16px/1.65 var(--f-body);
+  font:400 var(--fs-body)/1.6 var(--f-body);
   overflow-x:clip;
   padding-bottom:var(--bar-h);
   -webkit-font-smoothing:antialiased;
+  caret-color:var(--forest);
+  -webkit-tap-highlight-color:rgba(32,61,45,.12);
 }
+::selection{background:var(--accent);color:var(--forest)}
 img{display:block;max-width:100%;height:auto}
-a{color:inherit}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+a,button{touch-action:manipulation}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--forest);outline-offset:3px;border-radius:6px}
 .on-dark :focus-visible,.on-dark:focus-visible{outline-color:var(--accent)}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--forest);color:#fff;padding:10px 16px;border-radius:999px;text-decoration:none;transition:top .2s}
 .skip:focus{top:12px}
 
 .wrap{width:min(100% - var(--gutter)*2, var(--maxw));margin-inline:auto}
+.nowrap{white-space:nowrap}
 
 /* Tipografia base */
-.eyebrow{
-  font:600 12px/1 var(--f-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--moss);
-  display:inline-flex;align-items:center;gap:10px;
-}
-.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
 .h-section{
-  font:500 clamp(36px, 5.2vw, 76px)/1.02 var(--f-display);letter-spacing:-.02em;margin:18px 0 0;color:var(--ink);
+  font:500 var(--fs-h2)/1.04 var(--f-display);letter-spacing:-.025em;margin:0;color:var(--ink);
   text-wrap:balance;
 }
-.h-section em{font-style:italic;color:var(--moss)}
-.lede{font-size:clamp(16px,1.25vw,18px);color:var(--muted);max-width:56ch;margin:22px 0 0}
+.lede{font-size:var(--fs-lead);line-height:1.55;color:var(--ink);max-width:52ch;margin:24px 0 0}
 
-/* Botões */
+/* Ícone de seta */
+.arr{
+  display:inline-block;width:16px;height:16px;flex:0 0 16px;background:currentColor;
+  -webkit-mask:var(--i-arrow) center/contain no-repeat;mask:var(--i-arrow) center/contain no-repeat;
+  transition:transform .35s var(--ease);
+}
+.arr--down{-webkit-mask-image:var(--i-down);mask-image:var(--i-down)}
+
+/* Botões: planos, uma cor, cantos totalmente redondos */
 .btn{
   --bg-btn:var(--btn);--fg-btn:#F6F7EE;
-  display:inline-flex;align-items:center;gap:12px;
+  display:inline-flex;align-items:center;gap:10px;
   min-height:52px;padding:0 26px;border-radius:999px;border:0;cursor:pointer;
   background:var(--bg-btn);color:var(--fg-btn);text-decoration:none;
-  font:500 15px/1 var(--f-body);letter-spacing:.01em;
-  box-shadow:0 1px 0 rgba(255,255,255,.12) inset, 0 10px 24px -14px rgba(32,61,45,.7);
-  transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s;
+  font:500 15px/1 var(--f-body);
+  transition:transform .35s var(--ease), background-color .3s;
 }
-.btn:hover{transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.12) inset, 0 16px 30px -14px rgba(32,61,45,.75)}
-.btn .arr{display:inline-block;transition:transform .35s var(--ease)}
-.btn:hover .arr{transform:translate(3px,-3px)}
+.btn:hover{transform:translateY(-1px);--bg-btn:var(--forest)}
+.btn:active{transform:translateY(0)}
+.btn:hover .arr{transform:translate(2px,-2px)}
 .btn--light{--bg-btn:var(--paper);--fg-btn:var(--forest)}
-.btn--ghost{--bg-btn:transparent;--fg-btn:var(--forest);box-shadow:inset 0 0 0 1px var(--line)}
-.btn--ghost:hover{box-shadow:inset 0 0 0 1px var(--forest)}
-.on-dark .btn--ghost{--fg-btn:#F3F2E9;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
-.btn--sm{min-height:44px;padding:0 20px;font-size:14px}
+.btn--light:hover{--bg-btn:#fff}
+.btn--soft{--bg-btn:var(--bg-2);--fg-btn:var(--forest)}
+.btn--soft:hover{--bg-btn:var(--mint)}
+.on-dark .btn--soft{--bg-btn:rgba(255,255,255,.14);--fg-btn:#F3F2E9}
+.on-dark .btn--soft:hover{--bg-btn:rgba(255,255,255,.22)}
+.btn--sm{min-height:44px;padding:0 20px;font-size:var(--fs-small)}
 .link-arrow{
-  display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:500 15px/1 var(--f-body);color:var(--forest);
-  padding:14px 4px;background:linear-gradient(currentColor,currentColor) left calc(100% - 8px)/0 1px no-repeat;transition:background-size .4s var(--ease);
+  display:inline-flex;align-items:center;gap:8px;font:500 15px/1 var(--f-body);color:var(--forest);
+  padding:14px 2px;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:6px;
+  transition:text-decoration-color .3s;
 }
-.link-arrow:hover{background-size:100% 1px}
-.link-arrow .arr{transition:transform .35s var(--ease)}
-.link-arrow:hover .arr{transform:translateY(3px)}
-.link-arrow--x:hover .arr{transform:translate(3px,-3px)}
+.link-arrow:hover{text-decoration-color:currentColor}
+.link-arrow:hover .arr--down{transform:translateY(3px)}
+.link-arrow:hover .arr:not(.arr--down){transform:translate(2px,-2px)}
 
 /* =========================================================
    NAVEGAÇÃO
    ========================================================= */
 .nav{
   position:fixed;inset:0 0 auto 0;z-index:60;
-  transition:background .4s, box-shadow .4s, backdrop-filter .4s;
+  transition:background-color .4s;
 }
 .nav__inner{
   height:clamp(68px, calc(88 * var(--u)), 92px);
@@ -161,29 +179,28 @@ button{font:inherit;color:inherit}
   width:min(100% - var(--gutter)*2, 1400px);margin-inline:auto;
 }
 .nav.is-scrolled{
-  background:rgba(243,242,233,.72);
-  -webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);
-  box-shadow:0 1px 0 var(--line);
+  background:rgba(239,241,234,.92);
+  -webkit-backdrop-filter:saturate(1.3) blur(12px);backdrop-filter:saturate(1.3) blur(12px); /* taste-skill-ignore: única barra fixa com desfoque */
 }
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand img{width:46px;height:46px}
+.brand img{width:48px;height:48px}
 .brand__txt{display:flex;flex-direction:column;line-height:1}
-.brand__name{font:600 19px/1 var(--f-display);letter-spacing:.01em;color:var(--ink)}
-.brand__sub{font:600 9.5px/1 var(--f-tag);letter-spacing:.34em;text-transform:uppercase;color:var(--moss);margin-top:5px}
+.brand__name{font:600 var(--fs-lead)/1 var(--f-display);color:var(--ink)}
+.brand__sub{font:500 var(--fs-small)/1 var(--f-body);color:var(--moss);margin-top:4px}
 .nav__links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
 .nav__links a{
   display:block;padding:10px 14px;border-radius:999px;text-decoration:none;
-  font:500 14px/1 var(--f-body);color:var(--ink-2);transition:background .3s, color .3s;
+  font:500 15px/1 var(--f-body);color:var(--ink);transition:background-color .3s, color .3s;
 }
 .nav__links a:hover{background:rgba(32,61,45,.07)}
-.nav__links a[aria-current="true"]{background:rgba(32,61,45,.09);color:var(--forest)}
+.nav__links a[aria-current="true"]{background:rgba(32,61,45,.1);color:var(--forest)}
 .nav__cta{display:flex;align-items:center;gap:10px}
 .burger{
   display:none;width:48px;height:48px;border-radius:50%;border:0;background:rgba(32,61,45,.08);cursor:pointer;
   align-items:center;justify-content:center;
 }
-.burger span{display:block;width:18px;height:1.5px;background:var(--ink);position:relative;transition:transform .3s}
-.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--ink);transition:transform .3s, top .3s}
+.burger span{display:block;width:18px;height:2px;border-radius:2px;background:var(--ink);position:relative;transition:transform .3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;border-radius:2px;background:var(--ink);transition:transform .3s, top .3s}
 .burger span::before{top:-6px}.burger span::after{top:6px}
 .nav.is-open .burger span{background:transparent}
 .nav.is-open .burger span::before{top:0;transform:rotate(45deg)}
@@ -192,12 +209,13 @@ button{font:inherit;color:inherit}
 .mnav{
   position:fixed;inset:0;z-index:55;background:var(--bg);
   padding:110px var(--gutter) calc(32px + env(safe-area-inset-bottom));
-  display:flex;flex-direction:column;gap:6px;
+  display:flex;flex-direction:column;gap:4px;overscroll-behavior:contain;
   opacity:0;visibility:hidden;transform:translateY(-8px);
   transition:opacity .35s var(--ease), transform .35s var(--ease), visibility 0s .35s;
 }
+.mnav[hidden]{display:none}
 .nav.is-open + .mnav{opacity:1;visibility:visible;transform:none;transition:opacity .35s var(--ease), transform .35s var(--ease)}
-.mnav a.mnav__link{font:500 34px/1.25 var(--f-display);text-decoration:none;color:var(--ink);padding:6px 0;border-bottom:1px solid var(--line)}
+.mnav a.mnav__link{font:500 36px/1.2 var(--f-display);text-decoration:none;color:var(--ink);padding:8px 0}
 .mnav .btn{margin-top:auto;justify-content:center}
 
 @media (max-width:1080px){
@@ -220,18 +238,12 @@ button{font:inherit;color:inherit}
 }
 .hero__bg{position:absolute;inset:-6% 0;z-index:-3;will-change:transform}
 .hero__bg img{width:100%;height:100%;object-fit:cover;transform:scale(calc(1.06 + var(--hp) * .08))}
+/* véu claro para leitura do título sobre a foto */
 .hero__veil{
   position:absolute;inset:0;z-index:-2;pointer-events:none;
   background:
-    radial-gradient(ellipse 62% 54% at 50% 40%, rgba(238,240,228,.97) 0%, rgba(238,240,228,.9) 42%, rgba(238,240,228,.55) 72%, rgba(238,240,228,.18) 100%),
-    linear-gradient(180deg, rgba(238,240,228,.55) 0%, rgba(238,240,228,0) 30%, rgba(238,240,228,0) 70%, rgba(238,240,228,.85) 100%);
-}
-/* sombra de folhas: luz filtrada */
-.hero__light{
-  position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:.5;mix-blend-mode:soft-light;
-  background:
-    radial-gradient(circle at 18% 22%, rgba(255,245,200,.9), transparent 26%),
-    radial-gradient(circle at 82% 12%, rgba(255,240,190,.7), transparent 22%);
+    radial-gradient(ellipse 62% 54% at 50% 40%, rgba(238,240,228,.97) 0%, rgba(238,240,228,.9) 42%, rgba(238,240,228,.55) 72%, rgba(238,240,228,.18) 100%), /* taste-skill-ignore: véu neutro sobre foto, para leitura */
+    linear-gradient(180deg, rgba(238,240,228,.55) 0%, rgba(238,240,228,0) 30%, rgba(238,240,228,0) 70%, rgba(238,240,228,.85) 100%); /* taste-skill-ignore: véu neutro sobre foto, para leitura */
 }
 .leaf{position:absolute;z-index:-1;pointer-events:none;mix-blend-mode:multiply;will-change:transform}
 .leaf img{width:100%;height:auto}
@@ -244,129 +256,94 @@ button{font:inherit;color:inherit}
 
 .hero__content{
   grid-row:2;align-self:center;text-align:center;
-  padding:calc(24 * var(--u)) var(--gutter) calc(28 * var(--u));
+  padding:calc(32 * var(--u)) var(--gutter) calc(28 * var(--u));
   transform:translate3d(0, calc(var(--hp) * -60px), 0);
   opacity:calc(1 - var(--hp) * 1.4);
 }
-.hero__tag{
-  display:inline-flex;align-items:center;gap:12px;
-  font:600 calc(12.5 * var(--u))/1 var(--f-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--moss);
-  padding:calc(10 * var(--u)) calc(18 * var(--u));border-radius:999px;
-  background:rgba(252,252,247,.55);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7), 0 6px 20px -12px rgba(32,61,45,.35);
-  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
-}
-.hero__tag i{width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block}
 .hero h1{
-  margin:calc(26 * var(--u)) auto 0;
-  font:500 calc(80 * var(--u))/1.02 var(--f-display);letter-spacing:-.025em;color:var(--ink-2);
+  margin:0 auto;
+  font:500 calc(92 * var(--u))/1 var(--f-display);letter-spacing:-.03em;color:var(--ink);
 }
 .hero h1 .line{display:block}
-.hero h1 em{font-style:italic;font-weight:500;color:var(--forest)}
 .hero__sub{
-  max-width:calc(560 * var(--u));margin:calc(24 * var(--u)) auto 0;
-  font:400 calc(18 * var(--u))/1.65 var(--f-body);color:#465245;
+  max-width:calc(600 * var(--u));margin:calc(32 * var(--u)) auto 0;
+  font:400 calc(19 * var(--u))/1.6 var(--f-body);color:var(--ink);
 }
-.hero__actions{display:flex;justify-content:center;align-items:center;gap:calc(22 * var(--u));margin-top:calc(34 * var(--u));flex-wrap:wrap}
+.hero__actions{display:flex;justify-content:center;align-items:center;gap:calc(22 * var(--u));margin-top:calc(36 * var(--u));flex-wrap:wrap}
 
 .hero__cards{
   grid-row:3;
-  display:flex;justify-content:center;gap:calc(34 * var(--u));
+  display:flex;justify-content:center;gap:calc(28 * var(--u));
   padding:0 var(--gutter) calc(54 * var(--u));
   perspective:1400px;
 }
-.hcard-slot{width:calc(330 * var(--u));flex:0 0 auto}
+.hcard-slot{width:calc(340 * var(--u));flex:0 0 auto}
 .hcard-par{will-change:transform;transform:translate3d(0,var(--py,0px),0)}
 .hcard{
-  --rx:0deg;--ry:0deg;--lift:0px;--gx:50%;--gy:30%;
-  position:relative;display:block;height:calc(360 * var(--u));border-radius:calc(24 * var(--u));
+  --rx:0deg;--ry:0deg;--lift:0px;
+  position:relative;display:block;height:calc(350 * var(--u));border-radius:var(--radius);
   text-decoration:none;color:#fff;overflow:hidden;isolation:isolate;
-  background:linear-gradient(160deg, var(--sage) 0%, var(--moss) 60%, var(--forest) 100%);
-  padding:calc(10 * var(--u));
-  box-shadow:0 30px 60px -30px rgba(20,40,28,.55), 0 0 0 1px rgba(255,255,255,.35) inset;
+  background:var(--moss);
   transform:rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--lift));
   transform-style:preserve-3d;
-  transition:transform .6s var(--ease), box-shadow .6s var(--ease), filter .6s;
+  transition:transform .6s var(--ease);
 }
-.hcard::before{ /* moldura de vidro */
-  content:"";position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;
-  background:linear-gradient(140deg, rgba(255,255,255,.28), rgba(255,255,255,.04) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,.12));
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.45);
-}
-.hcard__glare{
-  position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:inherit;opacity:0;transition:opacity .5s;
-  background:radial-gradient(circle at var(--gx) var(--gy), rgba(255,255,255,.35), transparent 45%);
-  mix-blend-mode:soft-light;
-}
-.hcard:hover{--lift:calc(-4 * var(--u));filter:brightness(1.06)}
-.hcard:hover .hcard__glare{opacity:1}
-.hcard__media{position:absolute;inset:calc(10 * var(--u));border-radius:calc(16 * var(--u));overflow:hidden;z-index:0;
-  background:linear-gradient(160deg, var(--sage), var(--forest))}
+.hcard:hover{--lift:calc(-4 * var(--u))}
+.hcard__media{position:absolute;inset:0;overflow:hidden;z-index:0;background:var(--moss)}
 .hcard__media img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 1.2s var(--ease)}
 .hcard:hover .hcard__media img{transform:scale(1.1)}
-.hcard__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(20,40,28,0) 30%, rgba(20,40,28,.35) 55%, rgba(18,34,24,.88) 100%)}
+/* véu escuro neutro só para leitura do texto */
+.hcard__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(14,26,18,0) 35%, rgba(14,26,18,.55) 62%, rgba(14,26,18,.9) 100%)} /* taste-skill-ignore: véu neutro sobre foto, para leitura */
 .hcard__body{
-  position:absolute;left:calc(10 * var(--u));right:calc(10 * var(--u));bottom:calc(10 * var(--u));z-index:1;
-  padding:calc(22 * var(--u)) calc(22 * var(--u)) calc(24 * var(--u));
+  position:absolute;left:0;right:0;bottom:0;z-index:1;
+  padding:calc(26 * var(--u)) calc(26 * var(--u)) calc(28 * var(--u));
   transform:translateZ(30px);
 }
-.hcard__label{font:700 calc(11 * var(--u))/1 var(--f-tag);letter-spacing:.22em;color:var(--accent)}
-.hcard__title{display:block;font:500 calc(27 * var(--u))/1.1 var(--f-display);margin-top:calc(10 * var(--u));letter-spacing:-.01em}
-.hcard__desc{display:block;font:400 calc(13.5 * var(--u))/1.5 var(--f-body);margin-top:calc(8 * var(--u));color:rgba(255,255,255,.84)}
+.hcard__title{display:block;font:500 var(--fs-h3)/1.1 var(--f-display);letter-spacing:-.015em}
+.hcard__desc{display:block;font:400 max(14px, calc(15 * var(--u)))/1.5 var(--f-body);margin-top:calc(8 * var(--u));color:#fff}
 .hcard__go{
-  position:absolute;top:calc(22 * var(--u));right:calc(22 * var(--u));z-index:3;
-  width:calc(40 * var(--u));height:calc(40 * var(--u));min-width:32px;min-height:32px;border-radius:50%;
-  display:grid;place-items:center;background:rgba(252,252,247,.18);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);
-  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-size:calc(16 * var(--u));transition:transform .4s var(--ease), background .4s;
+  position:absolute;top:calc(20 * var(--u));right:calc(20 * var(--u));z-index:2;
+  width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;background:var(--paper);color:var(--forest);
+  transition:transform .4s var(--ease);
 }
-.hcard:hover .hcard__go{transform:rotate(45deg);background:rgba(252,252,247,.32)}
-.hcard--v .hcard__media img{object-position:62% 55%}
+.hcard:hover .hcard__go{transform:rotate(45deg)}
+/* foto do jardim vertical: corta a parede branca do topo */
 
-.scroll-cue{
-  position:absolute;left:calc(40 * var(--u));bottom:calc(54 * var(--u));z-index:2;
-  display:flex;align-items:center;gap:12px;writing-mode:vertical-rl;
-  font:600 11px/1 var(--f-tag);letter-spacing:.3em;text-transform:uppercase;color:var(--moss);text-decoration:none;
-}
-.scroll-cue::after{content:"";width:1px;height:56px;background:linear-gradient(var(--moss),transparent);animation:cue 2.4s var(--ease-soft) infinite}
-@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
 
 /* Hero — tablet / retrato */
 @media (max-width:900px), (orientation:portrait) and (max-width:1100px){
   :root{--u:calc(100vw / 900)}
   .hero{min-height:auto;padding-bottom:28px}
-  .hero__content{padding-top:56px;padding-bottom:36px}
-  .hero h1{font-size:clamp(44px, 8.4vw, 76px)}
-  .hero__sub{font-size:17px;max-width:520px}
-  .hero__tag{font-size:11.5px;padding:9px 16px}
+  .hero__content{padding-top:64px;padding-bottom:40px}
+  .hero h1{font-size:clamp(46px, 9vw, 80px)}
+  .hero__sub{font-size:18px;max-width:560px}
   .hero__actions{gap:14px;margin-top:30px}
-  .hero__cards{
-    justify-content:flex-start;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
-    padding:8px var(--gutter) 24px;scroll-padding-inline:var(--gutter);scrollbar-width:none;perspective:none;
-  }
-  .hero__cards::-webkit-scrollbar{display:none}
-  .hcard-slot{width:min(340px, 72vw);scroll-snap-align:start}
-  .hcard{height:380px;border-radius:22px;padding:9px}
-  .hcard__media{inset:9px;border-radius:15px}
-  .hcard__body{left:9px;right:9px;bottom:9px;padding:20px}
-  .hcard__label{font-size:11px}
-  .hcard__title{font-size:25px;margin-top:9px}
-  .hcard__desc{font-size:13.5px;margin-top:7px}
-  .hcard__go{width:38px;height:38px;top:20px;right:20px;font-size:15px}
-  .scroll-cue{display:none}
-  .leaf--a{width:300px;left:-120px;top:90px}
-  .leaf--b{width:260px;right:-110px;top:40px}
+  .hero__cards{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;padding:8px var(--gutter) 24px;perspective:none}
+  .hcard-slot{width:auto}
+  .hcard{height:280px;border-radius:16px}
+  .hcard__body{padding:18px}
+  .hcard__title{font-size:22px}
+  .hcard__desc{font-size:14px;margin-top:6px}
+  .hcard__go{width:40px;height:40px;top:14px;right:14px}
+  .leaf--a{width:280px;left:-170px;top:auto;bottom:360px;opacity:.55}
+  .leaf--b{width:240px;right:-150px;top:40px;opacity:.7}
   .leaf--c{display:none}
 }
 @media (max-width:560px){
-  .hero__content{padding-top:40px;padding-bottom:28px;text-align:left}
-  .hero h1{font-size:clamp(40px, 11.6vw, 54px);line-height:1.04;margin-top:22px}
-  .hero__sub{margin-left:0;font-size:16px}
+  .hero__content{padding-top:44px;padding-bottom:28px;text-align:left}
+  .hero h1{font-size:clamp(34px, 9.2vw, 46px);line-height:1.04}
+  .hero__sub{margin-left:0;font-size:17px;margin-top:20px}
   .hero__actions{justify-content:flex-start}
   .hero__actions .btn{width:100%;justify-content:center}
   .hero__veil{background:
-    linear-gradient(180deg, rgba(238,240,228,.94) 0%, rgba(238,240,228,.9) 55%, rgba(238,240,228,.7) 80%, rgba(238,240,228,.95) 100%)}
-  .hcard-slot{width:78vw}
-  .hcard{height:340px}
-  .hero__tag{font-size:10.5px;letter-spacing:.16em;padding:8px 14px}
+    linear-gradient(180deg, rgba(238,240,228,.94) 0%, rgba(238,240,228,.9) 55%, rgba(238,240,228,.7) 80%, rgba(238,240,228,.95) 100%)} /* taste-skill-ignore: véu neutro sobre foto, para leitura */
+  .hero__cards{grid-template-columns:1fr;gap:10px}
+  .hcard{height:150px}
+  .hcard__media::after{background:linear-gradient(90deg, rgba(14,26,18,.88) 0%, rgba(14,26,18,.6) 55%, rgba(14,26,18,.15) 100%)} /* taste-skill-ignore: véu neutro sobre foto, para leitura */
+  .hcard__body{right:64px;padding:18px}
+  .hcard__go{top:auto;bottom:16px;right:16px}
   .leaf--a{width:220px;left:-130px;top:auto;bottom:300px;opacity:.35}
   .leaf--b{width:200px;right:-120px;top:10px;opacity:.3}
 }
@@ -374,68 +351,50 @@ button{font:inherit;color:inherit}
 /* =========================================================
    REVELAÇÕES (IntersectionObserver)
    ========================================================= */
-.js [data-reveal]{opacity:0;transform:translate3d(0,32px,0);transition:opacity 1s var(--ease), transform 1.1s var(--ease), filter 1.1s var(--ease);transition-delay:var(--d,0ms)}
-.js [data-reveal="blur"]{filter:blur(10px)}
-.js [data-reveal="left"]{transform:translate3d(-40px,0,0)}
-.js [data-reveal="scale"]{transform:scale(.94)}
-.js [data-reveal].is-in{opacity:1;transform:none;filter:none}
+.js [data-reveal]{opacity:0;transform:translate3d(0,24px,0);transition:opacity .9s var(--ease), transform 1s var(--ease);transition-delay:var(--d,0ms)}
+.js [data-reveal="scale"]{transform:scale(.96)}
+.js [data-reveal].is-in{opacity:1;transform:none}
 
 /* =========================================================
-   SOBRE
+   SEÇÕES
    ========================================================= */
-.section{padding:clamp(88px, 11vw, 160px) 0;position:relative}
+.section{padding:clamp(72px, 9vw, 120px) 0;position:relative}
+
+/* SOBRE */
 .about{background:var(--bg)}
-.about__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px, 6vw, 96px);align-items:center}
-.about__visual{position:relative;height:clamp(440px, 52vw, 680px);perspective:1200px}
-.about__img{position:absolute;overflow:hidden;border-radius:var(--radius);background:linear-gradient(160deg,var(--sage),var(--forest))}
+.about__grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px, 6vw, 96px);align-items:center}
+.about__visual{position:relative;height:clamp(440px, 46vw, 620px);perspective:1200px}
+.about__img{position:absolute;overflow:hidden;border-radius:var(--radius);background:var(--moss)}
 .about__img img{width:100%;height:100%;object-fit:cover;transform:translate3d(0,var(--py,0px),0) scale(1.18)}
-.about__img--main{inset:0 18% 8% 0;box-shadow:0 40px 80px -40px rgba(20,40,28,.5)}
+.about__img--main{inset:0 18% 8% 0}
 .about__img--float{width:44%;aspect-ratio:4/5;right:0;bottom:0;border:8px solid var(--bg);border-radius:calc(var(--radius) + 6px);
-  box-shadow:0 30px 60px -30px rgba(20,40,28,.55);transform:translate3d(0,var(--py2,0px),40px)}
-.about__badge{
-  position:absolute;left:24px;bottom:calc(8% + 24px);z-index:2;
-  padding:14px 18px;border-radius:16px;background:rgba(252,252,247,.7);
-  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7);
-  font:600 11px/1.3 var(--f-tag);letter-spacing:.2em;text-transform:uppercase;color:var(--forest);
-}
-.about__text p{color:var(--muted);font-size:17px;max-width:52ch}
-.pillars{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
-.pillar{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
-.pillar__ico{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--forest);transition:transform .5s var(--ease), background .4s}
-.pillar:hover .pillar__ico{transform:rotate(-12deg) scale(1.06);background:var(--accent)}
-.pillar h3{margin:2px 0 4px;font:500 23px/1.2 var(--f-display);color:var(--ink)}
-.pillar p{margin:0;font-size:15px;color:var(--muted)}
+  transform:translate3d(0,var(--py2,0px),40px)}
+.about__text p{font-size:var(--fs-body);max-width:54ch;margin:20px 0 0}
+.about__text .h-section + p{margin-top:28px;font-size:var(--fs-lead)}
 @media (max-width:900px){
   .about__grid{grid-template-columns:1fr}
-  .about__visual{height:min(118vw, 560px)}
+  .about__visual{height:min(110vw, 540px)}
 }
 
-/* =========================================================
-   SERVIÇOS
-   ========================================================= */
+/* SERVIÇOS */
 .services{background:var(--paper)}
-.services__head{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(48px, 6vw, 80px)}
+.services__head{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(48px, 6vw, 72px)}
 .services__head .lede{justify-self:end;margin:0}
 .svc-grid{display:grid;grid-template-columns:repeat(12, 1fr);gap:clamp(18px, 2vw, 28px);perspective:1600px}
 .svc{
   --rx:0deg;--ry:0deg;
   position:relative;display:flex;flex-direction:column;border-radius:var(--radius);background:var(--bg);
-  overflow:hidden;box-shadow:0 0 0 1px var(--line);scroll-margin-top:110px;
+  overflow:hidden;scroll-margin-top:110px;
   transform:rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--lift,0px));
-  transition:transform .7s var(--ease), box-shadow .6s var(--ease);
+  transition:transform .7s var(--ease), background-color .4s;
 }
-.svc:hover{--lift:-6px;box-shadow:0 0 0 1px rgba(32,61,45,.22), 0 30px 60px -36px rgba(20,40,28,.45)}
-.svc__media{position:relative;overflow:hidden;aspect-ratio:var(--ar, 16/10);background:linear-gradient(160deg,var(--sage),var(--forest))}
+.svc:hover{--lift:-6px;background:var(--bg-2)}
+.svc__media{position:relative;overflow:hidden;aspect-ratio:var(--ar, 16/10);background:var(--moss)}
 .svc__media img{width:100%;height:100%;object-fit:cover;transform:translate3d(0,var(--py,0px),0) scale(1.2);transition:scale 1.2s var(--ease)}
 .svc:hover .svc__media img{scale:1.04}
-.svc__num{
-  position:absolute;left:18px;top:18px;z-index:1;
-  font:700 12px/1 var(--f-tag);letter-spacing:.2em;color:var(--forest);
-  padding:9px 12px;border-radius:999px;background:rgba(252,252,247,.78);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
-}
 .svc__body{padding:clamp(22px, 2.4vw, 34px);display:flex;flex-direction:column;gap:12px;flex:1}
-.svc h3{margin:0;font:500 clamp(25px, 2.3vw, 34px)/1.12 var(--f-display);letter-spacing:-.01em;color:var(--ink)}
-.svc p{margin:0;color:var(--muted);font-size:15.5px;max-width:58ch}
+.svc h3{margin:0;font:500 var(--fs-h3)/1.15 var(--f-display);letter-spacing:-.01em;color:var(--ink)}
+.svc p{margin:0;font-size:var(--fs-body);max-width:58ch}
 .svc .link-arrow{margin-top:auto;align-self:flex-start}
 .svc--1{grid-column:span 7;--ar:16/11}
 .svc--2{grid-column:span 5;--ar:4/4.2}
@@ -443,6 +402,9 @@ button{font:inherit;color:inherit}
 .svc--4{grid-column:span 7;--ar:16/9.6}
 .svc--5{grid-column:span 6;--ar:16/10}
 .svc--6{grid-column:span 6;--ar:16/10}
+/* recortes das fotos verticais em cartões largos */
+.svc--3 .svc__media img{object-position:50% 70%}
+.svc--4 .svc__media img{object-position:50% 58%}
 .svc--2,.svc--4{margin-top:clamp(0px, 5vw, 72px)}
 @media (max-width:1000px){
   .services__head{grid-template-columns:1fr}
@@ -458,41 +420,40 @@ button{font:inherit;color:inherit}
    PROJETOS — cena 3D fixada (scroll storytelling)
    ========================================================= */
 .projects{background:var(--forest);color:#EEF0E4;position:relative}
-.projects__scene{height:320vh;position:relative}
+.projects__scene{height:520vh;position:relative}
 .projects__sticky{
   position:sticky;top:0;height:100svh;display:grid;grid-template-columns:minmax(300px, .8fr) 1.2fr;align-items:center;
   gap:clamp(24px, 4vw, 72px);width:min(100% - var(--gutter)*2, 1400px);margin-inline:auto;overflow:hidden;
 }
-.projects .eyebrow{color:var(--accent)}
 .projects .h-section{color:#F3F2E9}
-.projects .h-section em{color:var(--accent)}
-.projects__intro p{color:rgba(238,240,228,.72);max-width:44ch}
-.projects__meta{margin-top:40px;display:flex;align-items:center;gap:18px}
-.projects__count{font:500 44px/1 var(--f-display);color:#F3F2E9;min-width:3.5ch}
-.projects__count small{font:600 13px/1 var(--f-tag);letter-spacing:.2em;color:rgba(238,240,228,.5)}
-.projects__bar{flex:1;max-width:220px;height:1px;background:rgba(238,240,228,.2);position:relative;overflow:hidden}
-.projects__bar i{position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(var(--pp,0))}
+.projects__intro p{color:#E3E8DC;max-width:44ch;font-size:var(--fs-body)}
+.projects__intro .h-section + p{margin-top:24px}
+.projects__meta{margin-top:36px;display:flex;align-items:center;gap:18px}
+.projects__count{font:500 var(--fs-h3)/1 var(--f-display);color:#F3F2E9;white-space:nowrap}
+.projects__count small{font:400 var(--fs-small)/1 var(--f-body);color:#C9D2C4}
+.projects__bar{flex:1;max-width:220px;height:4px;border-radius:4px;background:rgba(238,240,228,.18);position:relative;overflow:hidden}
+.projects__bar i{position:absolute;inset:0;border-radius:4px;background:var(--accent);transform-origin:left;transform:scaleX(var(--pp,0))}
 .projects__cap{margin-top:22px;min-height:3.4em}
-.projects__cap strong{display:block;font:500 24px/1.2 var(--f-display);color:#F3F2E9}
-.projects__cap span{font-size:14.5px;color:rgba(238,240,228,.65)}
+.projects__cap strong{display:block;font:500 var(--fs-h3)/1.2 var(--f-display);color:#F3F2E9}
+.projects__cap span{font-size:var(--fs-small);color:#C9D2C4}
 .projects__cta{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
 
 .stage{position:relative;height:min(74svh, 640px);perspective:1400px;perspective-origin:50% 30%}
 .pcard{
   position:absolute;inset:0;margin:auto;width:min(100%, 760px);height:100%;
-  border:0;padding:0;cursor:zoom-in;border-radius:26px;overflow:hidden;background:linear-gradient(160deg,var(--sage),var(--moss));
-  box-shadow:0 50px 90px -40px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.18);
+  border:0;padding:0;cursor:zoom-in;border-radius:22px;overflow:hidden;background:var(--moss);
   will-change:transform, opacity;transform-origin:50% 100%;
 }
 .pcard img{width:100%;height:100%;object-fit:cover}
-.pcard::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);background:linear-gradient(180deg,transparent 60%,rgba(10,22,15,.45))}
-.pcard__tag{position:absolute;left:20px;bottom:20px;z-index:1;font:700 11px/1 var(--f-tag);letter-spacing:.22em;text-transform:uppercase;color:#fff;
-  padding:10px 14px;border-radius:999px;background:rgba(20,40,28,.45);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.pcard__zoom{position:absolute;right:20px;bottom:20px;z-index:1;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(252,252,247,.85);color:var(--forest)}
+.pcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,22,15,0) 60%,rgba(10,22,15,.5))} /* taste-skill-ignore: véu neutro sobre foto, para leitura */
+.pcard__tag{position:absolute;left:20px;bottom:20px;z-index:1;font:500 var(--fs-small)/1 var(--f-body);color:var(--forest);
+  padding:11px 16px;border-radius:999px;background:var(--paper)}
+.pcard__zoom{position:absolute;right:20px;bottom:20px;z-index:1;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--paper);color:var(--forest)}
+.pcard__zoom svg{width:18px;height:18px}
 
 @media (max-width:900px){
   .projects__scene{height:auto}
-  .projects__sticky{position:relative;height:auto;grid-template-columns:1fr;padding:clamp(88px, 11vw, 140px) 0;overflow:visible}
+  .projects__sticky{position:relative;height:auto;grid-template-columns:1fr;padding:clamp(72px, 9vw, 120px) 0;overflow:visible}
   .projects__meta{display:none}
   .projects__cap{display:none}
   .stage{height:auto;perspective:none;display:grid;gap:16px}
@@ -500,75 +461,66 @@ button{font:inherit;color:inherit}
 }
 
 /* Lightbox */
-.lightbox{border:0;padding:0;background:transparent;max-width:min(94vw, 1100px);width:100%;color:#fff}
-.lightbox::backdrop{background:rgba(12,22,16,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.lightbox{border:0;padding:0;background:transparent;max-width:min(94vw, 1100px);width:100%;color:#fff;overscroll-behavior:contain}
+.lightbox::backdrop{background:rgba(12,22,16,.9)}
 .lightbox figure{margin:0}
-.lightbox img{width:100%;max-height:78vh;object-fit:contain;border-radius:16px;background:#111}
-.lightbox figcaption{margin-top:14px;font-size:15px;color:rgba(255,255,255,.85)}
-.lightbox__close{position:absolute;right:10px;top:10px;width:46px;height:46px;border-radius:50%;border:0;background:rgba(252,252,247,.92);color:var(--forest);font-size:22px;cursor:pointer}
+.lightbox img{width:100%;max-height:78vh;object-fit:contain;border-radius:14px;background:#111}
+.lightbox figcaption{margin-top:14px;font-size:var(--fs-body);color:#fff}
+.lightbox__close{position:absolute;right:10px;top:10px;width:48px;height:48px;border-radius:50%;border:0;background:var(--paper);color:var(--forest);cursor:pointer;display:grid;place-items:center}
+.lightbox__close svg{width:20px;height:20px}
 .lightbox__nav{display:flex;gap:10px;margin-top:12px}
-.lightbox__nav button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer}
+.lightbox__nav button{min-height:44px;padding:0 20px;border-radius:999px;border:0;background:#2E4535;color:#fff;cursor:pointer;transition:background-color .3s}
+.lightbox__nav button:hover{background:#3B5643}
 
 /* =========================================================
    LOJA
    ========================================================= */
 .shop{background:var(--bg)}
 .shop__hero{
-  position:relative;border-radius:calc(var(--radius) + 8px);overflow:hidden;min-height:clamp(320px, 38vw, 480px);
+  position:relative;border-radius:calc(var(--radius) + 8px);overflow:hidden;min-height:clamp(320px, 36vw, 460px);
   display:flex;align-items:flex-end;padding:clamp(28px, 4vw, 56px);color:#F3F2E9;
-  background:linear-gradient(160deg,var(--moss),var(--forest));
+  background:var(--forest);
 }
 .shop__hero-img{position:absolute;inset:-12% 0;z-index:0}
 .shop__hero-img img{width:100%;height:100%;object-fit:cover;transform:translate3d(0,var(--py,0px),0)}
-.shop__hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg, rgba(18,34,24,.88) 0%, rgba(18,34,24,.55) 50%, rgba(18,34,24,.1) 100%)}
-.shop__hero-txt{position:relative;z-index:1;max-width:620px}
-.shop__hero .eyebrow{color:var(--accent)}
+.shop__hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg, rgba(14,26,18,.9) 0%, rgba(14,26,18,.6) 50%, rgba(14,26,18,.12) 100%)} /* taste-skill-ignore: véu neutro sobre foto, para leitura */
+.shop__hero-txt{position:relative;z-index:1;max-width:640px}
 .shop__hero .h-section{color:#F6F7EE}
-.shop__hero p{color:rgba(243,242,233,.82);margin:18px 0 0;max-width:48ch}
-.shop-grid{margin-top:clamp(28px, 3vw, 40px);display:grid;grid-template-columns:repeat(4, 1fr);gap:clamp(14px, 1.6vw, 22px)}
-.prod{
-  position:relative;display:flex;flex-direction:column;border-radius:20px;background:var(--paper);overflow:hidden;
-  box-shadow:0 0 0 1px var(--line);transition:transform .6s var(--ease), box-shadow .6s var(--ease);
-}
-.prod:hover{transform:translateY(-6px);box-shadow:0 0 0 1px rgba(32,61,45,.2), 0 26px 50px -30px rgba(20,40,28,.45)}
-.prod__media{position:relative;aspect-ratio:4/3.3;overflow:hidden;background:linear-gradient(160deg,var(--mint),var(--sage))}
+.shop__hero p{color:#EEF0E4;margin:20px 0 0;max-width:48ch;font-size:var(--fs-body)}
+.shop-grid{margin-top:clamp(36px, 4vw, 56px);display:grid;grid-template-columns:repeat(4, 1fr);gap:clamp(28px, 3vw, 44px) clamp(16px, 1.8vw, 26px)}
+.prod{position:relative;display:flex;flex-direction:column}
+.prod__media{position:relative;aspect-ratio:4/3.3;overflow:hidden;border-radius:16px;background:var(--bg-2)}
 .prod__media img,.prod__media canvas{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--ease)}
-.prod:hover .prod__media img,.prod:hover .prod__media canvas{transform:scale(1.06)}
-.prod__note{position:absolute;right:10px;bottom:10px;font:600 10px/1 var(--f-tag);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(20,40,28,.55);padding:6px 9px;border-radius:999px}
-.prod__body{padding:20px 20px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
-.prod h3{margin:0;font:500 22px/1.15 var(--f-display);color:var(--ink)}
-.prod p{margin:0 0 14px;font-size:14px;line-height:1.6;color:var(--muted)}
+.prod:hover .prod__media img,.prod:hover .prod__media canvas{transform:scale(1.05)}
+.prod__note{position:absolute;right:10px;bottom:10px;font:500 var(--fs-small)/1 var(--f-body);color:var(--forest);background:var(--paper);padding:7px 11px;border-radius:999px}
+.prod__body{padding:18px 2px 0;display:flex;flex-direction:column;gap:6px;flex:1}
+.prod h3{margin:0;font:500 var(--fs-h3)/1.15 var(--f-display);color:var(--ink)}
+.prod p{margin:0 0 16px;font-size:15px;line-height:1.55}
 .prod .btn{margin-top:auto;align-self:flex-start}
-.shop__note{margin:28px 0 0;font-size:13.5px;color:var(--muted);max-width:80ch}
+.shop__note{margin:40px 0 0;font-size:var(--fs-small);color:var(--muted);max-width:80ch}
 @media (max-width:1100px){.shop-grid{grid-template-columns:repeat(2, 1fr)}}
 @media (max-width:560px){
-  .shop-grid{grid-template-columns:1fr}
-  .prod{flex-direction:row}
-  .prod__media{aspect-ratio:auto;width:36%;flex:0 0 36%}
-  .prod__body{padding:16px}
-  .prod h3{font-size:20px}
-  .prod p{font-size:13.5px}
-  .prod .btn{min-height:44px;padding:0 16px;font-size:13.5px}
+  .shop-grid{grid-template-columns:1fr;gap:20px}
+  .prod{flex-direction:row;gap:16px;align-items:stretch}
+  .prod__media{aspect-ratio:auto;width:38%;flex:0 0 38%;min-height:150px}
+  .prod__body{padding:4px 0}
+  .prod h3{font-size:21px}
+  .prod p{font-size:var(--fs-small);margin-bottom:12px}
+  .prod .btn{min-height:44px;padding:0 18px}
   .hide-sm{display:none}
 }
 
 /* =========================================================
-   DIFERENCIAIS
+   POR QUE A ESTILO NATIVO
    ========================================================= */
 .diff{background:var(--paper)}
 .diff__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px, 6vw, 96px);align-items:start}
-.diff__visual{position:sticky;top:110px;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,var(--sage),var(--forest))}
+.diff__visual{position:sticky;top:110px;margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--moss)}
 .diff__visual img{width:100%;height:100%;object-fit:cover;transform:translate3d(0,var(--py,0px),0) scale(1.2)}
-.diff__visual figcaption{position:absolute;left:18px;right:18px;bottom:18px;padding:16px 18px;border-radius:16px;background:rgba(252,252,247,.72);
-  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:14px;color:var(--ink-2)}
-.diff__list{list-style:none;margin:44px 0 0;padding:0}
-.diff__item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--line)}
-.diff__item:last-child{border-bottom:1px solid var(--line)}
-.diff__ico{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:var(--bg);color:var(--forest);box-shadow:inset 0 0 0 1px var(--line);transition:transform .6s var(--ease), background .4s}
-.diff__item:hover .diff__ico{transform:translateY(-4px) rotate(-6deg);background:var(--mint)}
-.diff__ico svg{width:26px;height:26px}
-.diff__item h3{margin:4px 0 6px;font:500 23px/1.2 var(--f-display);color:var(--ink)}
-.diff__item p{margin:0;color:var(--muted);font-size:15.5px}
+.diff__visual figcaption{position:absolute;left:18px;right:18px;bottom:18px;padding:16px 18px;border-radius:14px;background:var(--paper);font-size:var(--fs-small);color:var(--ink)}
+.diff__list{list-style:none;margin:48px 0 0;padding:0;display:grid;gap:36px}
+.diff__item h3{margin:0 0 8px;font:500 var(--fs-h3)/1.2 var(--f-display);color:var(--ink)}
+.diff__item p{margin:0;font-size:var(--fs-body);max-width:52ch}
 @media (max-width:900px){
   .diff__grid{grid-template-columns:1fr}
   .diff__visual{position:relative;top:0;aspect-ratio:16/11}
@@ -579,51 +531,56 @@ button{font:inherit;color:inherit}
    ========================================================= */
 .visit{background:var(--bg)}
 .visit__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px, 5vw, 80px);align-items:start}
-.info{margin:36px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
-.info div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
-.info dt{font:700 11px/1.6 var(--f-tag);letter-spacing:.2em;text-transform:uppercase;color:var(--moss);padding-top:3px}
-.info dd{margin:0;font-size:16px;color:var(--ink-2)}
-.info a{text-decoration-color:rgba(32,61,45,.3);text-underline-offset:4px}
-.visit__actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.info{margin:40px 0 0;display:grid;gap:22px}
+.info div{display:grid;grid-template-columns:120px 1fr;gap:16px}
+.info dt{font:600 var(--fs-small)/1.6 var(--f-body);color:var(--moss);padding-top:2px}
+.info dd{margin:0;font-size:var(--fs-body);color:var(--ink)}
+.info a{text-decoration-color:rgba(32,61,45,.35)}
+.info a:hover{text-decoration-color:currentColor}
+.visit__actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
 .quotes{display:grid;gap:18px}
-.quote{margin:0;padding:clamp(26px, 3vw, 38px);border-radius:var(--radius);background:var(--paper);box-shadow:0 0 0 1px var(--line)}
+.quote{margin:0;padding:clamp(28px, 3vw, 40px);border-radius:var(--radius);background:var(--bg-2)}
 .quote blockquote{margin:0;font:400 clamp(22px, 2.1vw, 30px)/1.3 var(--f-display);font-style:italic;color:var(--ink)}
-.quote figcaption{margin-top:16px;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:10px}
-.quote figcaption::before{content:"";width:22px;height:1px;background:currentColor}
-.quotes__src{font-size:13px;color:var(--muted);margin:4px 0 0}
+.quote figcaption{margin-top:16px;font-size:var(--fs-small);color:var(--moss);font-weight:500}
+.quotes__src{font-size:var(--fs-small);color:var(--muted);margin:4px 0 0}
 @media (max-width:900px){.visit__grid{grid-template-columns:1fr}}
-@media (max-width:480px){.info div{grid-template-columns:1fr;gap:4px}}
+@media (max-width:480px){.info div{grid-template-columns:1fr;gap:2px}}
 
 /* =========================================================
    CTA FINAL
    ========================================================= */
-.cta{position:relative;isolation:isolate;overflow:hidden;color:#F3F2E9;padding:clamp(120px, 16vw, 220px) 0;text-align:center;background:var(--forest)}
+.cta{position:relative;isolation:isolate;overflow:hidden;color:#F3F2E9;padding:clamp(110px, 14vw, 200px) 0;background:var(--forest)}
 .cta__bg{position:absolute;inset:-18% 0;z-index:-2}
 .cta__bg img{width:100%;height:100%;object-fit:cover;transform:translate3d(0,var(--py,0px),0) scale(var(--cs,1.05))}
-.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 70% 70% at 50% 50%, rgba(18,34,24,.72), rgba(18,34,24,.86))}
-.cta .eyebrow{color:var(--accent)}
-.cta .eyebrow::before{display:none}
-.cta h2{font:500 clamp(40px, 6vw, 88px)/1.02 var(--f-display);letter-spacing:-.02em;margin:20px auto 0;max-width:14ch;text-wrap:balance}
-.cta h2 em{font-style:italic;color:var(--accent)}
-.cta p{max-width:56ch;margin:24px auto 0;color:rgba(243,242,233,.84);font-size:17px}
-.cta__actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:38px}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(14,26,18,.76)}
+.cta h2{font:500 var(--fs-h2)/1.04 var(--f-display);letter-spacing:-.025em;margin:0;max-width:18ch;text-wrap:balance}
+.cta p{max-width:52ch;margin:28px 0 0;color:#EEF0E4;font-size:var(--fs-lead);line-height:1.55}
+.cta .wrap{display:grid;grid-template-columns:1.3fr .7fr;column-gap:clamp(32px, 6vw, 96px);align-items:end}
+.cta h2,.cta p{grid-column:1}
+.cta__actions{grid-column:2;grid-row:1 / span 2;align-self:end;display:flex;flex-direction:column;align-items:stretch;gap:12px}
+.cta__actions .btn{justify-content:space-between}
+.cta__meta{margin:8px 0 0;font-size:var(--fs-small);color:#D9E0D3;line-height:1.6}
+@media (max-width:900px){
+  .cta .wrap{grid-template-columns:1fr}
+  .cta__actions{grid-column:1;grid-row:auto;margin-top:36px;align-items:flex-start}
+}
 
 /* =========================================================
    RODAPÉ
    ========================================================= */
-.footer{background:#17291F;color:rgba(238,240,228,.78);padding:clamp(64px, 8vw, 100px) 0 36px;font-size:15px}
+.footer{background:#17291F;color:#D9E0D3;padding:clamp(64px, 8vw, 100px) 0 40px;font-size:15px}
 .footer__top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:clamp(28px, 4vw, 56px)}
-.footer__logo{width:92px;height:92px;border-radius:24px;background:var(--paper);padding:8px}
+.footer__logo{width:96px;height:96px;border-radius:24px;background:var(--paper);padding:8px}
 .footer__brand p{max-width:34ch;margin:20px 0 0}
-.footer h3{font:700 11px/1 var(--f-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:8px 0 18px}
-.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-.footer a{text-decoration:none;color:rgba(238,240,228,.86);display:inline-block;padding:5px 0;transition:color .25s}
-.footer a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.footer__h{font:500 var(--fs-h3)/1.1 var(--f-display);color:#F3F2E9;margin:4px 0 16px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.footer a{text-decoration:none;color:#EEF0E4;display:inline-block;padding:6px 0;transition:color .25s}
+.footer a:hover{color:#fff;text-decoration:underline}
 .footer address{font-style:normal;line-height:1.7}
-.footer__bottom{margin-top:56px;padding-top:24px;border-top:1px solid rgba(238,240,228,.12);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(238,240,228,.55)}
-.footer__bottom a{padding:0;color:rgba(238,240,228,.7)}
+.footer__bottom{margin-top:64px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:var(--fs-small);color:#AEB9A9}
+.footer__bottom a{padding:0;color:#D9E0D3}
 @media (max-width:1000px){.footer__top{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.footer__top{grid-template-columns:1fr}}
+@media (max-width:560px){.footer__top{grid-template-columns:1fr}.footer a{padding:11px 0}}
 
 /* =========================================================
    WHATSAPP FLUTUANTE + BARRA MÓVEL
@@ -631,9 +588,9 @@ button{font:inherit;color:inherit}
 .wa-float{
   position:fixed;right:24px;bottom:24px;z-index:50;
   display:flex;align-items:center;gap:10px;height:56px;padding:0 20px 0 16px;border-radius:999px;
-  background:#1F6E43;color:#fff;text-decoration:none;font:500 14.5px/1 var(--f-body);
-  box-shadow:0 18px 36px -16px rgba(20,60,35,.7), inset 0 0 0 1px rgba(255,255,255,.18);
-  transition:transform .4s var(--ease), opacity .4s, box-shadow .4s;
+  background:var(--wa);color:#fff;text-decoration:none;font:500 15px/1 var(--f-body);
+
+  transition:transform .4s var(--ease), opacity .4s;
   opacity:0;transform:translateY(16px);pointer-events:none;
 }
 .wa-float.is-visible{opacity:1;transform:none;pointer-events:auto}
@@ -647,17 +604,16 @@ button{font:inherit;color:inherit}
     display:grid;grid-template-columns:1fr auto;gap:10px;
     position:fixed;left:0;right:0;bottom:0;z-index:50;
     padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-    background:rgba(243,242,233,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
-    box-shadow:0 -1px 0 var(--line);
+    background:var(--bg-2);
   }
   .mbar a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;border-radius:999px;text-decoration:none;font:500 15px/1 var(--f-body)}
-  .mbar__wa{background:#1F6E43;color:#fff}
-  .mbar__map{padding:0 18px;background:var(--paper);color:var(--forest);box-shadow:inset 0 0 0 1px var(--line)}
+  .mbar__wa{background:var(--wa);color:#fff}
+  .mbar__map{padding:0 20px;background:var(--paper);color:var(--forest)}
   .mbar svg{width:22px;height:22px}
   .nav.is-open ~ .mbar{display:none}
 }
 
-/* Imagem com falha: mantém o gradiente, esconde o ícone quebrado */
+/* Imagem com falha: mantém a cor de fundo, esconde o ícone quebrado */
 .img-failed > img{visibility:hidden}
 
 /* =========================================================
@@ -672,12 +628,16 @@ button{font:inherit;color:inherit}
    MOVIMENTO REDUZIDO
    ========================================================= */
 /* .rm = prefers-reduced-motion ativo (definido no <head>; teste o modo animado com ?motion=1) */
+@media (prefers-reduced-motion:reduce){
+  .intro-pending .intro-x{opacity:1;animation:none}
+  .js [data-reveal]{opacity:1;transform:none}
+}
 html.rm{scroll-behavior:auto}
 .rm *,.rm *::before,.rm *::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.15s !important}
-.rm [data-reveal]{opacity:1 !important;transform:none !important;filter:none !important}
+.rm [data-reveal]{opacity:1 !important;transform:none !important}
 .rm .hero__content{transform:none;opacity:1}
 .rm .projects__scene,html:not(.js) .projects__scene{height:auto}
-.rm .projects__sticky,html:not(.js) .projects__sticky{position:relative;height:auto;grid-template-columns:1fr;padding:120px 0;overflow:visible}
+.rm .projects__sticky,html:not(.js) .projects__sticky{position:relative;height:auto;grid-template-columns:1fr;padding:clamp(72px, 9vw, 120px) 0;overflow:visible}
 .rm .projects__meta,.rm .projects__cap,html:not(.js) .projects__meta{display:none}
 .rm .stage,html:not(.js) .stage{height:auto;perspective:none;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .rm .pcard,html:not(.js) .pcard{position:relative;height:auto;aspect-ratio:4/3;transform:none !important;opacity:1 !important}
@@ -690,9 +650,9 @@ html.rm{scroll-behavior:auto}
 <!-- ============ NAVEGAÇÃO ============ -->
 <header class="nav intro-x" id="nav">
   <div class="nav__inner">
-    <a class="brand" href="#inicio" aria-label="Estilo Nativo Paisagismo — início">
+    <a class="brand" href="#inicio" aria-label="Estilo Nativo Paisagismo, ir para o início">
       <img src="logo-200.png" alt="" width="46" height="46">
-      <span class="brand__txt"><span class="brand__name">Estilo Nativo</span><span class="brand__sub">Paisagismo</span></span>
+      <span class="brand__txt"><span class="brand__name" translate="no">Estilo Nativo</span><span class="brand__sub">Paisagismo</span></span>
     </a>
     <nav aria-label="Navegação principal">
       <ul class="nav__links">
@@ -705,7 +665,7 @@ html.rm{scroll-behavior:auto}
       </ul>
     </nav>
     <div class="nav__cta">
-      <a class="btn btn--sm" data-wa="Olá! Gostaria de solicitar um orçamento com a Estilo Nativo." href="#contato">Solicitar orçamento <span class="arr" aria-hidden="true">↗</span></a>
+      <a class="btn btn--sm" data-wa="Olá! Gostaria de solicitar um orçamento com a Estilo Nativo." href="#contato">Solicitar orçamento <span class="arr" aria-hidden="true"></span></a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Abrir menu"><span></span></button>
     </div>
   </div>
@@ -717,7 +677,7 @@ html.rm{scroll-behavior:auto}
   <a class="mnav__link" href="#loja">Loja</a>
   <a class="mnav__link" href="#sobre">Sobre</a>
   <a class="mnav__link" href="#contato">Contato</a>
-  <a class="btn" data-wa="Olá! Gostaria de solicitar um orçamento com a Estilo Nativo." href="#contato">Solicitar orçamento <span class="arr" aria-hidden="true">↗</span></a>
+  <a class="btn" data-wa="Olá! Gostaria de solicitar um orçamento com a Estilo Nativo." href="#contato">Solicitar orçamento <span class="arr" aria-hidden="true"></span></a>
 </div>
 
 <main id="conteudo">
@@ -728,21 +688,19 @@ html.rm{scroll-behavior:auto}
     <img src="hero-folhagem.webp" alt="" width="2000" height="1333" fetchpriority="high">
   </div>
   <div class="hero__veil"></div>
-  <div class="hero__light"></div>
   <div class="leaf leaf--a intro-leaf" data-speed="-0.35" data-anchor="hero" aria-hidden="true"><img src="folha-monstera.webp" alt="" width="1200" height="800"></div>
   <div class="leaf leaf--b intro-leaf" data-speed="-0.18" data-anchor="hero" aria-hidden="true"><img src="folha-monstera-2.webp" alt="" width="1000" height="667"></div>
   <div class="leaf leaf--c intro-leaf" data-speed="-0.5" data-anchor="hero" aria-hidden="true"><img src="folha-monstera.webp" alt="" width="1200" height="800"></div>
 
   <div class="hero__content">
-    <span class="hero__tag intro-x" data-intro="tag"><i aria-hidden="true"></i>Paisagismo • Natureza • Tecnologia</span>
     <h1 id="hero-title">
-      <span class="line intro-x" data-intro="l1">Natureza que <em>transforma</em>,</span>
-      <span class="line intro-x" data-intro="l2">espaços que <em>inspiram</em>.</span>
+      <span class="line intro-x" data-intro="l1">Natureza que</span>
+      <span class="line intro-x" data-intro="l2">transforma espaços.</span>
     </h1>
-    <p class="hero__sub intro-x" data-intro="sub">Do paisagismo à manutenção, criamos soluções para cultivar ambientes mais verdes, bonitos e funcionais — e temos uma loja completa de jardinagem em Ourinhos.</p>
+    <p class="hero__sub intro-x" data-intro="sub">Paisagismo, jardins verticais, irrigação e manutenção, além de uma loja completa de plantas e jardinagem em <span class="nowrap">Ourinhos – SP</span>.</p>
     <div class="hero__actions">
-      <a class="btn intro-x" data-intro="cta1" data-wa="Olá! Quero transformar meu espaço com a Estilo Nativo. Pode me ajudar com um orçamento?" href="#contato">Transforme seu espaço <span class="arr" aria-hidden="true">↗</span></a>
-      <a class="link-arrow intro-x" data-intro="cta2" href="#servicos">Descubra nossos serviços <span class="arr" aria-hidden="true">↓</span></a>
+      <a class="btn intro-x" data-intro="cta1" data-wa="Olá! Quero transformar meu espaço com a Estilo Nativo. Pode me ajudar com um orçamento?" href="#contato">Transforme seu espaço <span class="arr" aria-hidden="true"></span></a>
+      <a class="link-arrow intro-x" data-intro="cta2" href="#servicos">Descubra nossos serviços <span class="arr arr--down" aria-hidden="true"></span></a>
     </div>
   </div>
 
@@ -750,12 +708,10 @@ html.rm{scroll-behavior:auto}
     <div class="hcard-slot intro-x" data-intro="card" role="listitem">
       <div class="hcard-par" data-speed="-0.06" data-anchor="hero">
         <a class="hcard tilt" href="#servico-paisagismo">
-          <span class="hcard__media"><img src="paisagismo-residencia.webp" alt="Residência contemporânea com gramado e vegetação integrada à arquitetura" width="1000" height="667"></span>
-          <span class="hcard__glare" aria-hidden="true"></span>
-          <span class="hcard__go" aria-hidden="true">↗</span>
+          <span class="hcard__media"><img src="paisagismo-residencia-palmeiras.webp" alt="Entrada de residência com palmeiras, arbustos podados e canteiros" width="800" height="1296"></span>
+          <span class="hcard__go" aria-hidden="true"><span class="arr"></span></span>
           <span class="hcard__body">
-            <span class="hcard__label">01 · PAISAGISMO</span>
-            <span class="hcard__title">Natureza em harmonia</span>
+            <span class="hcard__title">Paisagismo</span>
             <span class="hcard__desc">Projetos que integram vegetação, arquitetura e bem-estar.</span>
           </span>
         </a>
@@ -764,12 +720,10 @@ html.rm{scroll-behavior:auto}
     <div class="hcard-slot intro-x" data-intro="card" role="listitem">
       <div class="hcard-par" data-speed="-0.12" data-anchor="hero">
         <a class="hcard tilt" href="#servico-irrigacao">
-          <span class="hcard__media"><img src="irrigacao-aspersores-gramado.webp" alt="Aspersores de irrigação automática regando um gramado" width="1080" height="1806"></span>
-          <span class="hcard__glare" aria-hidden="true"></span>
-          <span class="hcard__go" aria-hidden="true">↗</span>
+          <span class="hcard__media"><img src="irrigacao-gramado-residencia.webp" alt="Aspersores de irrigação automática regando o gramado de uma residência" width="832" height="1248"></span>
+          <span class="hcard__go" aria-hidden="true"><span class="arr"></span></span>
           <span class="hcard__body">
-            <span class="hcard__label">02 · IRRIGAÇÃO</span>
-            <span class="hcard__title">Cuidado inteligente</span>
+            <span class="hcard__title">Irrigação automática</span>
             <span class="hcard__desc">Mais praticidade para manter seu jardim bem cuidado.</span>
           </span>
         </a>
@@ -777,21 +731,17 @@ html.rm{scroll-behavior:auto}
     </div>
     <div class="hcard-slot intro-x" data-intro="card" role="listitem">
       <div class="hcard-par" data-speed="-0.03" data-anchor="hero">
-        <a class="hcard hcard--v tilt" href="#servico-vertical">
-          <span class="hcard__media"><img src="projeto-jardim-vertical-2.png" alt="Jardim vertical com folhagens variadas ao lado de deck de madeira" width="512" height="383"></span>
-          <span class="hcard__glare" aria-hidden="true"></span>
-          <span class="hcard__go" aria-hidden="true">↗</span>
+        <a class="hcard tilt" href="#servico-vertical">
+          <span class="hcard__media"><img src="jardim-vertical-tropical.webp" alt="Jardim vertical com costelas-de-adão e folhagens tropicais em camadas" width="1127" height="1920"></span>
+          <span class="hcard__go" aria-hidden="true"><span class="arr"></span></span>
           <span class="hcard__body">
-            <span class="hcard__label">03 · JARDINS VERTICAIS</span>
-            <span class="hcard__title">Verde em novas dimensões</span>
+            <span class="hcard__title">Jardins verticais</span>
             <span class="hcard__desc">Transforme paredes em experiências naturais.</span>
           </span>
         </a>
       </div>
     </div>
   </div>
-
-  <a class="scroll-cue intro-x" data-intro="cue" href="#sobre">Role</a>
 </section>
 
 <!-- ============ SOBRE ============ -->
@@ -799,32 +749,16 @@ html.rm{scroll-behavior:auto}
   <div class="wrap about__grid">
     <div class="about__visual" data-reveal="scale">
       <div class="about__img about__img--main">
-        <img src="sobre-folhas.webp" alt="Folhagens verdes densas vistas de perto" width="1400" height="933" loading="lazy" data-speed="0.06">
+        <img src="canteiro-tropical.webp" alt="Canteiro tropical com folhagens de folhas grandes, samambaias e palmeiras" width="768" height="1024" loading="lazy" data-speed="0.06">
       </div>
       <div class="about__img about__img--float" data-speed2="-0.1">
         <img src="sobre-maos.webp" alt="Mãos segurando uma muda de planta com terra" width="900" height="600" loading="lazy">
       </div>
-      <span class="about__badge">Floricultura e paisagismo<br>em Ourinhos · SP</span>
     </div>
     <div class="about__text">
-      <span class="eyebrow" data-reveal>Sobre a Estilo Nativo</span>
-      <h2 class="h-section" id="sobre-title" data-reveal="blur" style="--d:80ms">Mais do que jardins. <em>Ambientes vivos.</em></h2>
+      <h2 class="h-section" id="sobre-title" data-reveal="blur" style="--d:80ms">Mais do que jardins. Ambientes vivos.</h2>
       <p data-reveal style="--d:160ms">A Estilo Nativo une cuidado, técnica e natureza para criar e manter espaços verdes que fazem parte da rotina. Do planejamento paisagístico à manutenção e à irrigação, cada solução é pensada para atender às necessidades de cada ambiente.</p>
       <p data-reveal style="--d:220ms">E, na nossa loja, você encontra plantas, flores, frutíferas, vasos, adubos e materiais para cuidar do seu jardim no dia a dia.</p>
-      <ul class="pillars">
-        <li class="pillar" data-reveal style="--d:0ms">
-          <span class="pillar__ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14Z"/><path d="M5 19 13 11"/></svg></span>
-          <div><h3>Natureza</h3><p>Valorização da vegetação e dos espaços verdes em cada ambiente.</p></div>
-        </li>
-        <li class="pillar" data-reveal style="--d:90ms">
-          <span class="pillar__ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg></span>
-          <div><h3>Cuidado</h3><p>Atenção contínua à saúde e à aparência das plantas.</p></div>
-        </li>
-        <li class="pillar" data-reveal style="--d:180ms">
-          <span class="pillar__ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10Z"/><path d="M12 13v3"/><circle cx="12" cy="17.5" r=".6" fill="currentColor"/></svg></span>
-          <div><h3>Tecnologia</h3><p>Soluções que facilitam a irrigação e o manejo dos jardins.</p></div>
-        </li>
-      </ul>
     </div>
   </div>
 </section>
@@ -834,64 +768,63 @@ html.rm{scroll-behavior:auto}
   <div class="wrap">
     <div class="services__head">
       <div>
-        <span class="eyebrow" data-reveal>Serviços</span>
-        <h2 class="h-section" id="servicos-title" data-reveal="blur" style="--d:80ms">Cada espaço tem seu jeito de <em>florescer.</em></h2>
+        <h2 class="h-section" id="servicos-title" data-reveal="blur" style="--d:80ms">Cada espaço tem seu jeito de florescer.</h2>
       </div>
-      <p class="lede" data-reveal style="--d:160ms">Soluções para criar, cuidar e valorizar seus ambientes verdes — da parede da varanda ao gramado do quintal.</p>
+      <p class="lede" data-reveal style="--d:160ms">Soluções para criar, cuidar e valorizar seus ambientes verdes, da parede da varanda ao gramado do quintal.</p>
     </div>
 
     <div class="svc-grid">
       <article class="svc svc--1 tilt-soft" id="servico-vertical" data-reveal>
-        <div class="svc__media"><span class="svc__num">01</span><img src="projeto-jardim-vertical-1.png" alt="Jardim vertical exuberante com folhagens verdes e roxas em área externa com deck" width="513" height="387" loading="lazy" data-speed="0.05"></div>
+        <div class="svc__media"><img src="jardim-vertical-piscina-detalhe.webp" alt="Jardim vertical com folhagens verdes, vinho e brancas sobre floreira junto à piscina" width="1104" height="928" loading="lazy" data-speed="0.05"></div>
         <div class="svc__body">
           <h3>Jardim vertical com regas programadas</h3>
           <p>Transforme paredes em áreas verdes com jardins verticais que aproveitam melhor o espaço. O sistema de regas programadas auxilia na manutenção da umidade das plantas, reduzindo a necessidade de irrigação manual frequente.</p>
-          <a class="link-arrow link-arrow--x" data-wa="Olá! Tenho interesse em um jardim vertical com regas programadas." href="#contato">Quero um jardim vertical <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="link-arrow" data-wa="Olá! Tenho interesse em um jardim vertical com regas programadas." href="#contato">Quero um jardim vertical <span class="arr" aria-hidden="true"></span></a>
         </div>
       </article>
 
       <article class="svc svc--2 tilt-soft" id="servico-irrigacao" data-reveal style="--d:100ms">
-        <div class="svc__media"><span class="svc__num">02</span><img src="irrigacao-gotejamento.webp" alt="Sistema de irrigação por tubos e aspersores entre canteiros de hortaliças" width="736" height="1051" loading="lazy" data-speed="0.05"></div>
+        <div class="svc__media"><img src="irrigacao-gramado-residencia.webp" alt="Aspersores de irrigação automática regando o gramado ao lado de uma casa" width="832" height="1248" loading="lazy" data-speed="0.05"></div>
         <div class="svc__body">
           <h3>Irrigação automática</h3>
           <p>Tenha mais praticidade no cuidado com o jardim. Sistemas de irrigação automática distribuem água de maneira programada, conforme as necessidades das plantas e as características do ambiente.</p>
-          <a class="link-arrow link-arrow--x" data-wa="Olá! Gostaria de saber mais sobre os sistemas de irrigação automática." href="#contato">Consultar irrigação <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="link-arrow" data-wa="Olá! Gostaria de saber mais sobre os sistemas de irrigação automática." href="#contato">Consultar irrigação <span class="arr" aria-hidden="true"></span></a>
         </div>
       </article>
 
       <article class="svc svc--3 tilt-soft" id="servico-manutencao" data-reveal>
-        <div class="svc__media"><span class="svc__num">03</span><img src="manutencao-poda.webp" alt="Mãos com tesoura de poda aparando um arbusto" width="1000" height="667" loading="lazy" data-speed="0.05"></div>
+        <div class="svc__media"><img src="canteiro-palmeira-forracao.webp" alt="Canteiro bem cuidado com palmeira, forração vermelha e capim ornamental sobre o gramado" width="784" height="1328" loading="lazy" data-speed="0.05"></div>
         <div class="svc__body">
           <h3>Manutenção de jardins</h3>
           <p>Cuide da aparência e da vitalidade do seu espaço verde com cuidados periódicos com a vegetação, a organização e a aparência do jardim, de acordo com as necessidades de cada espaço.</p>
-          <a class="link-arrow link-arrow--x" data-wa="Olá! Gostaria de consultar os serviços de manutenção de jardins." href="#contato">Solicitar manutenção <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="link-arrow" data-wa="Olá! Gostaria de consultar os serviços de manutenção de jardins." href="#contato">Solicitar manutenção <span class="arr" aria-hidden="true"></span></a>
         </div>
       </article>
 
       <article class="svc svc--4 tilt-soft" id="servico-paisagismo" data-reveal style="--d:100ms">
-        <div class="svc__media"><span class="svc__num">04</span><img src="paisagismo-caminho.webp" alt="Caminho de tijolos entre canteiros floridos e árvores em um jardim" width="1000" height="667" loading="lazy" data-speed="0.05"></div>
+        <div class="svc__media"><img src="paisagismo-residencia-palmeiras.webp" alt="Paisagismo na entrada de uma residência, com palmeiras e arbustos podados" width="800" height="1296" loading="lazy" data-speed="0.05"></div>
         <div class="svc__body">
           <h3>Paisagismo</h3>
           <p>O paisagismo organiza e valoriza os espaços externos e internos por meio da escolha de plantas, da composição dos elementos naturais e da integração com a arquitetura. O resultado busca unir estética, funcionalidade e harmonia com o ambiente.</p>
-          <a class="link-arrow link-arrow--x" data-wa="Olá! Gostaria de solicitar um orçamento de paisagismo." href="#contato">Planejar meu jardim <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="link-arrow" data-wa="Olá! Gostaria de solicitar um orçamento de paisagismo." href="#contato">Planejar meu jardim <span class="arr" aria-hidden="true"></span></a>
         </div>
       </article>
 
       <article class="svc svc--5 tilt-soft" id="servico-nutricao" data-reveal>
-        <div class="svc__media"><span class="svc__num">05</span><img src="nutricao-maos.webp" alt="Mãos com luvas segurando uma muda com substrato" width="1000" height="667" loading="lazy" data-speed="0.05"></div>
+        <div class="svc__media"><img src="nutricao-maos.webp" alt="Mãos com luvas segurando uma muda com substrato" width="1000" height="667" loading="lazy" data-speed="0.05"></div>
         <div class="svc__body">
           <h3>Nutrição vegetal</h3>
           <p>A nutrição vegetal envolve o fornecimento dos nutrientes necessários ao desenvolvimento saudável das plantas. A escolha dos produtos e dos cuidados adequados ajuda a favorecer o crescimento e a vitalidade da vegetação.</p>
-          <a class="link-arrow link-arrow--x" data-wa="Olá! Preciso de informações sobre nutrição vegetal." href="#contato">Consultar nutrição <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="link-arrow" data-wa="Olá! Preciso de informações sobre nutrição vegetal." href="#contato">Consultar nutrição <span class="arr" aria-hidden="true"></span></a>
         </div>
       </article>
 
       <article class="svc svc--6 tilt-soft" id="servico-loja" data-reveal style="--d:100ms">
-        <div class="svc__media"><span class="svc__num">06</span><img src="loja-interior.webp" alt="Loja de plantas com vasos e folhagens em prateleiras de madeira" width="1200" height="800" loading="lazy" data-speed="0.05"></div>
+        <div class="svc__media"><img src="loja-interior.webp" alt="Loja de plantas com vasos e folhagens em prateleiras de madeira" width="1200" height="800" loading="lazy" data-speed="0.05"></div>
         <div class="svc__body">
           <h3>Loja de materiais para jardinagem</h3>
           <p>Encontre produtos para cuidar das plantas, preparar o solo, montar canteiros e valorizar seu jardim. Consulte a disponibilidade dos materiais e receba orientação sobre as opções adequadas para sua necessidade.</p>
-          <a class="link-arrow" href="#loja">Ver categorias da loja <span class="arr" aria-hidden="true">↓</span></a>
+          <a class="link-arrow" href="#loja">Ver categorias da loja <span class="arr arr--down" aria-hidden="true"></span></a>
         </div>
       </article>
     </div>
@@ -903,30 +836,41 @@ html.rm{scroll-behavior:auto}
   <div class="projects__scene" id="projScene">
     <div class="projects__sticky">
       <div class="projects__intro">
-        <span class="eyebrow">Projetos</span>
-        <h2 class="h-section" id="projetos-title">Natureza em cada <em>detalhe.</em></h2>
-        <p>Jardins verticais que trazem vida a paredes, áreas de lazer e piscinas. Role para percorrer os registros.</p>
+        <h2 class="h-section" id="projetos-title">Natureza em cada detalhe.</h2>
+        <p>Jardins verticais, paisagismo e irrigação feitos pela Estilo Nativo. Role para percorrer os trabalhos.</p>
         <div class="projects__meta" aria-hidden="true">
-          <span class="projects__count"><span id="projNum">01</span> <small>/ 03</small></span>
+          <span class="projects__count"><span id="projNum">1</span> <small>de 6</small></span>
           <span class="projects__bar" id="projBar"><i></i></span>
         </div>
-        <p class="projects__cap" id="projCap" aria-live="polite"><strong>Jardim vertical · área externa</strong><span>Folhagens de diferentes cores e texturas sobre deck de madeira.</span></p>
+        <p class="projects__cap" id="projCap" aria-live="polite"><strong>Jardim vertical · área da piscina</strong><span>Folhagens, samambaias e flores brancas cobrindo o muro de ponta a ponta.</span></p>
         <div class="projects__cta">
-          <a class="btn btn--light" data-wa="Olá! Vi os projetos no site e quero transformar meu espaço também." href="#contato">Conversar com a Estilo Nativo <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="btn btn--light" data-wa="Olá! Vi os projetos no site e quero transformar meu espaço também." href="#contato">Conversar com a Estilo Nativo <span class="arr" aria-hidden="true"></span></a>
         </div>
       </div>
       <div class="stage" id="stage">
-        <button class="pcard" type="button" data-idx="0" data-title="Jardim vertical · área externa" data-text="Folhagens de diferentes cores e texturas sobre deck de madeira.">
-          <img src="projeto-jardim-vertical-1.png" alt="Jardim vertical com folhagens verdes, roxas e vermelhas em área externa com deck de madeira" width="513" height="387" loading="lazy">
-          <span class="pcard__tag">Jardim vertical</span><span class="pcard__zoom" aria-hidden="true">⤢</span>
+        <button class="pcard" type="button" data-idx="0" data-title="Jardim vertical · área da piscina" data-text="Folhagens, samambaias e flores brancas cobrindo o muro de ponta a ponta.">
+          <img src="jardim-vertical-piscina.webp" alt="Jardim vertical extenso com folhagens, samambaias e flores brancas ao lado da piscina" width="1024" height="1008" loading="lazy" style="object-position:50% 50%">
+          <span class="pcard__tag">Jardim vertical</span><span class="pcard__zoom" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h4v4M8 16H4v-4M16 4l-5 5M4 16l5-5"/></svg></span>
         </button>
-        <button class="pcard" type="button" data-idx="1" data-title="O mesmo jardim, outro ângulo" data-text="Composição em camadas de cores e texturas ocupando toda a parede.">
-          <img src="projeto-jardim-vertical-2.png" alt="Vista frontal do jardim vertical com diferentes espécies de folhagens" width="512" height="383" loading="lazy">
-          <span class="pcard__tag">Jardim vertical</span><span class="pcard__zoom" aria-hidden="true">⤢</span>
+        <button class="pcard" type="button" data-idx="1" data-title="Jardim vertical · varanda" data-text="Verde-limão e vinho em contraste, com vasos suspensos no topo.">
+          <img src="jardim-vertical-deck.webp" alt="Jardim vertical em varanda com folhagens verde-limão e vinho e vasos suspensos" width="1024" height="1024" loading="lazy" style="object-position:50% 45%">
+          <span class="pcard__tag">Jardim vertical</span><span class="pcard__zoom" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h4v4M8 16H4v-4M16 4l-5 5M4 16l5-5"/></svg></span>
         </button>
-        <button class="pcard" type="button" data-idx="2" data-title="Jardins verticais · área da piscina" data-text="Duas faces verdes emoldurando o muro da área de lazer.">
-          <img src="projeto-jardim-vertical-piscina.png" alt="Dois jardins verticais nas laterais de um muro ao lado da piscina" width="516" height="382" loading="lazy">
-          <span class="pcard__tag">Área da piscina</span><span class="pcard__zoom" aria-hidden="true">⤢</span>
+        <button class="pcard" type="button" data-idx="2" data-title="Jardim vertical · tropical" data-text="Costelas-de-adão e folhagens grandes em camadas, a céu aberto.">
+          <img src="jardim-vertical-tropical.webp" alt="Jardim vertical com costelas-de-adão e folhagens tropicais em camadas" width="1127" height="1920" loading="lazy" style="object-position:50% 35%">
+          <span class="pcard__tag">Jardim vertical</span><span class="pcard__zoom" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h4v4M8 16H4v-4M16 4l-5 5M4 16l5-5"/></svg></span>
+        </button>
+        <button class="pcard" type="button" data-idx="3" data-title="Paisagismo residencial" data-text="Palmeiras, arbustos podados e canteiros na entrada da casa.">
+          <img src="paisagismo-residencia-palmeiras.webp" alt="Entrada de residência com palmeiras, arbustos podados e canteiros recém-preparados" width="800" height="1296" loading="lazy" style="object-position:50% 58%">
+          <span class="pcard__tag">Paisagismo</span><span class="pcard__zoom" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h4v4M8 16H4v-4M16 4l-5 5M4 16l5-5"/></svg></span>
+        </button>
+        <button class="pcard" type="button" data-idx="4" data-title="Canteiro com palmeira" data-text="Palmeira, forração vermelha e capim ornamental sobre o gramado.">
+          <img src="canteiro-palmeira-forracao.webp" alt="Canteiro com palmeira, forração vermelha e capim ornamental cercado por gramado" width="784" height="1328" loading="lazy" style="object-position:50% 62%">
+          <span class="pcard__tag">Paisagismo</span><span class="pcard__zoom" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h4v4M8 16H4v-4M16 4l-5 5M4 16l5-5"/></svg></span>
+        </button>
+        <button class="pcard" type="button" data-idx="5" data-title="Irrigação automática" data-text="Aspersores regando o gramado ao lado da casa.">
+          <img src="irrigacao-gramado-residencia.webp" alt="Aspersores de irrigação automática em funcionamento sobre o gramado de uma residência" width="832" height="1248" loading="lazy" style="object-position:50% 45%">
+          <span class="pcard__tag">Irrigação</span><span class="pcard__zoom" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h4v4M8 16H4v-4M16 4l-5 5M4 16l5-5"/></svg></span>
         </button>
       </div>
     </div>
@@ -935,14 +879,14 @@ html.rm{scroll-behavior:auto}
 
 <dialog class="lightbox" id="lightbox" aria-label="Imagem ampliada">
   <figure>
-    <img id="lbImg" src="projeto-jardim-vertical-1.png" alt="" width="513" height="387">
+    <img id="lbImg" src="jardim-vertical-piscina.webp" alt="" width="1024" height="1008" loading="lazy">
     <figcaption id="lbCap"></figcaption>
   </figure>
   <div class="lightbox__nav">
-    <button type="button" id="lbPrev">← Anterior</button>
-    <button type="button" id="lbNext">Próxima →</button>
+    <button type="button" id="lbPrev">Anterior</button>
+    <button type="button" id="lbNext">Próxima</button>
   </div>
-  <button class="lightbox__close" type="button" id="lbClose" aria-label="Fechar">×</button>
+  <button class="lightbox__close" type="button" id="lbClose" aria-label="Fechar"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15"/></svg></button>
 </dialog>
 
 <!-- ============ LOJA ============ -->
@@ -951,7 +895,6 @@ html.rm{scroll-behavior:auto}
     <div class="shop__hero on-dark">
       <div class="shop__hero-img"><img src="loja-interior.webp" alt="" width="1200" height="800" loading="lazy" data-speed="0.07"></div>
       <div class="shop__hero-txt">
-        <span class="eyebrow" data-reveal>Loja · Ourinhos</span>
         <h2 class="h-section" id="loja-title" data-reveal="blur" style="--d:80ms">Tudo para cultivar suas ideias.</h2>
         <p data-reveal style="--d:160ms">Produtos para cuidar das plantas, preparar o solo e dar vida aos seus projetos. Consulte disponibilidade e valores direto pelo WhatsApp ou visite a loja.</p>
       </div>
@@ -961,42 +904,42 @@ html.rm{scroll-behavior:auto}
       <article class="prod" data-reveal>
         <div class="prod__media"><img src="terra-vegetal.webp" alt="Mãos preparando terra para o plantio" width="800" height="533" loading="lazy"></div>
         <div class="prod__body"><h3>Terra vegetal</h3><p>Para canteiros, vasos e preparo do solo.</p>
-          <a class="btn btn--sm btn--ghost" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de terra vegetal na Estilo Nativo." href="#contato">Consultar<span class="hide-sm"> pelo WhatsApp</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+          <a class="btn btn--sm btn--soft" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de terra vegetal na Estilo Nativo." href="#contato"><span>Consultar<span class="hide-sm"> pelo WhatsApp</span></span> <span class="arr" aria-hidden="true"></span></a></div>
       </article>
       <article class="prod" data-reveal style="--d:70ms">
         <div class="prod__media"><img src="vasos.webp" alt="Planta espada-de-são-jorge em vaso rosa" width="800" height="533" loading="lazy"></div>
         <div class="prod__body"><h3>Vasos</h3><p>Modelos para interiores, varandas e jardins.</p>
-          <a class="btn btn--sm btn--ghost" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de vasos na Estilo Nativo." href="#contato">Consultar<span class="hide-sm"> pelo WhatsApp</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+          <a class="btn btn--sm btn--soft" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de vasos na Estilo Nativo." href="#contato"><span>Consultar<span class="hide-sm"> pelo WhatsApp</span></span> <span class="arr" aria-hidden="true"></span></a></div>
       </article>
       <article class="prod" data-reveal style="--d:140ms">
         <div class="prod__media"><img src="plantas.webp" alt="Diversas plantas ornamentais em vasos" width="800" height="533" loading="lazy"></div>
         <div class="prod__body"><h3>Plantas, flores e frutíferas</h3><p>Folhagens, flores e frutíferas para cada espaço.</p>
-          <a class="btn btn--sm btn--ghost" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de plantas, flores e frutíferas na Estilo Nativo." href="#contato">Consultar<span class="hide-sm"> pelo WhatsApp</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+          <a class="btn btn--sm btn--soft" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de plantas, flores e frutíferas na Estilo Nativo." href="#contato"><span>Consultar<span class="hide-sm"> pelo WhatsApp</span></span> <span class="arr" aria-hidden="true"></span></a></div>
       </article>
       <article class="prod" data-reveal style="--d:210ms">
         <div class="prod__media"><img src="adubos.webp" alt="Mãos plantando uma pequena muda no solo" width="800" height="533" loading="lazy"></div>
         <div class="prod__body"><h3>Adubos e fertilizantes</h3><p>Nutrição para o crescimento saudável das plantas.</p>
-          <a class="btn btn--sm btn--ghost" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de adubos e fertilizantes na Estilo Nativo." href="#contato">Consultar<span class="hide-sm"> pelo WhatsApp</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+          <a class="btn btn--sm btn--soft" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de adubos e fertilizantes na Estilo Nativo." href="#contato"><span>Consultar<span class="hide-sm"> pelo WhatsApp</span></span> <span class="arr" aria-hidden="true"></span></a></div>
       </article>
       <article class="prod" data-reveal>
         <div class="prod__media"><img src="pragas.webp" alt="Mão segurando uma folha de samambaia saudável" width="800" height="533" loading="lazy"></div>
         <div class="prod__body"><h3>Controle de pragas</h3><p>Produtos para proteger suas plantas. Use sempre conforme o rótulo e a legislação.</p>
-          <a class="btn btn--sm btn--ghost" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de produtos para controle de pragas na Estilo Nativo." href="#contato">Consultar<span class="hide-sm"> pelo WhatsApp</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+          <a class="btn btn--sm btn--soft" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de produtos para controle de pragas na Estilo Nativo." href="#contato"><span>Consultar<span class="hide-sm"> pelo WhatsApp</span></span> <span class="arr" aria-hidden="true"></span></a></div>
       </article>
       <article class="prod" data-reveal style="--d:70ms">
         <div class="prod__media"><canvas data-texture="pedras" width="640" height="480" role="img" aria-label="Ilustração de pedras decorativas"></canvas><span class="prod__note">Ilustração</span></div>
         <div class="prod__body"><h3>Pedras decorativas</h3><p>Acabamento para canteiros, caminhos e vasos.</p>
-          <a class="btn btn--sm btn--ghost" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de pedras decorativas na Estilo Nativo." href="#contato">Consultar<span class="hide-sm"> pelo WhatsApp</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+          <a class="btn btn--sm btn--soft" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de pedras decorativas na Estilo Nativo." href="#contato"><span>Consultar<span class="hide-sm"> pelo WhatsApp</span></span> <span class="arr" aria-hidden="true"></span></a></div>
       </article>
       <article class="prod" data-reveal style="--d:140ms">
         <div class="prod__media"><canvas data-texture="pinus" width="640" height="480" role="img" aria-label="Ilustração de casca de pinus"></canvas><span class="prod__note">Ilustração</span></div>
         <div class="prod__body"><h3>Casca de pinus</h3><p>Cobertura de solo para canteiros e vasos.</p>
-          <a class="btn btn--sm btn--ghost" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de casca de pinus na Estilo Nativo." href="#contato">Consultar<span class="hide-sm"> pelo WhatsApp</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+          <a class="btn btn--sm btn--soft" data-wa="Olá! Gostaria de consultar a disponibilidade e os valores de casca de pinus na Estilo Nativo." href="#contato"><span>Consultar<span class="hide-sm"> pelo WhatsApp</span></span> <span class="arr" aria-hidden="true"></span></a></div>
       </article>
       <article class="prod" data-reveal style="--d:210ms">
         <div class="prod__media"><img src="outros-materiais.webp" alt="Pá de jardinagem, terra e vasos sobre uma mesa" width="800" height="533" loading="lazy"></div>
         <div class="prod__body"><h3>Outros materiais</h3><p>Itens para jardinagem, cultivo e decoração.</p>
-          <a class="btn btn--sm btn--ghost" data-wa="Olá! Gostaria de consultar os produtos disponíveis na loja da Estilo Nativo." href="#contato">Consultar<span class="hide-sm"> pelo WhatsApp</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+          <a class="btn btn--sm btn--soft" data-wa="Olá! Gostaria de consultar os produtos disponíveis na loja da Estilo Nativo." href="#contato"><span>Consultar<span class="hide-sm"> pelo WhatsApp</span></span> <span class="arr" aria-hidden="true"></span></a></div>
       </article>
     </div>
     <p class="shop__note">Disponibilidade, valores e condições são informados no atendimento. As imagens dos produtos são ilustrativas.</p>
@@ -1007,31 +950,25 @@ html.rm{scroll-behavior:auto}
 <section class="section diff" aria-labelledby="diff-title">
   <div class="wrap diff__grid">
     <figure class="diff__visual" data-reveal="scale" style="margin:0">
-      <img src="diferenciais-gramado.webp" alt="Gramado verde e bem cuidado em frente a uma residência moderna" width="1400" height="933" loading="lazy" data-speed="0.05">
-      <figcaption>Criação, cuidado e produtos no mesmo lugar.</figcaption>
+      <img src="jardim-vertical-deck.webp" alt="Jardim vertical em varanda com deck de madeira e vasos suspensos" width="1024" height="1024" loading="lazy" data-speed="0.05">
+
     </figure>
     <div>
-      <span class="eyebrow" data-reveal>Por que a Estilo Nativo</span>
-      <h2 class="h-section" id="diff-title" data-reveal="blur" style="--d:80ms">Seu espaço verde, com mais <em>cuidado</em> e praticidade.</h2>
+      <h2 class="h-section" id="diff-title" data-reveal="blur" style="--d:80ms">Por que a Estilo Nativo</h2>
       <ul class="diff__list">
         <li class="diff__item" data-reveal>
-          <span class="diff__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9 20v-5a3 3 0 0 1 6 0v5"/></svg></span>
           <div><h3>Soluções para diferentes ambientes</h3><p>Áreas externas, paredes, varandas e espaços internos: cada proposta parte das características do lugar.</p></div>
         </li>
         <li class="diff__item" data-reveal style="--d:60ms">
-          <span class="diff__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg></span>
           <div><h3>Paisagismo e manutenção integrados</h3><p>Criação e cuidado podem caminhar juntos, mantendo o jardim coerente com a proposta original.</p></div>
         </li>
         <li class="diff__item" data-reveal style="--d:120ms">
-          <span class="diff__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10Z"/><circle cx="17.5" cy="5.5" r="2.5"/><path d="M17.5 4.5v1l.7.6"/></svg></span>
           <div><h3>Praticidade com sistemas de irrigação</h3><p>Regas programadas reduzem a necessidade de irrigação manual frequente.</p></div>
         </li>
         <li class="diff__item" data-reveal style="--d:180ms">
-          <span class="diff__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10h12l-1.4 9.2a1 1 0 0 1-1 .8H8.4a1 1 0 0 1-1-.8L6 10Z"/><path d="M12 10V6"/><path d="M12 7c0-2 1.5-3 4-3 0 2-1.5 3-4 3Z"/><path d="M12 8c0-1.6-1.2-2.5-3.2-2.5 0 1.6 1.2 2.5 3.2 2.5Z"/></svg></span>
           <div><h3>Produtos para o cuidado diário</h3><p>Terra, adubos, vasos e plantas na loja, para manter tudo em dia.</p></div>
         </li>
         <li class="diff__item" data-reveal style="--d:240ms">
-          <span class="diff__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19l-4 1Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-1.5-1-2-2l1-1-1-2L9 9.5Z"/></svg></span>
           <div><h3>Atendimento direto pelo WhatsApp</h3><p>Tire dúvidas, envie fotos do seu espaço e peça orçamento em uma conversa.</p></div>
         </li>
       </ul>
@@ -1043,18 +980,18 @@ html.rm{scroll-behavior:auto}
 <section class="section visit" id="contato" aria-labelledby="contato-title">
   <div class="wrap visit__grid">
     <div>
-      <span class="eyebrow" data-reveal>Contato · Loja física</span>
-      <h2 class="h-section" id="contato-title" data-reveal="blur" style="--d:80ms">Venha escolher <em>pessoalmente.</em></h2>
-      <p class="lede" data-reveal style="--d:140ms">Na nossa loja em Ourinhos você encontra plantas, flores, vasos, adubos e materiais para jardinagem — e conversa com quem entende de jardim.</p>
+      <h2 class="h-section" id="contato-title" data-reveal="blur" style="--d:80ms">Venha escolher pessoalmente.</h2>
+      <p class="lede" data-reveal style="--d:140ms">Na nossa loja em Ourinhos você encontra plantas, flores, vasos, adubos e materiais para jardinagem, e conversa com quem entende de jardim.</p>
       <dl class="info" data-reveal style="--d:200ms">
         <div><dt>Endereço</dt><dd><address style="font-style:normal">Av. Gastão Vidigal, 1000 – Jardim Matilde<br>Ourinhos – SP, 19901-010</address></dd></div>
         <div><dt>WhatsApp</dt><dd><a data-wa="Olá! Vim pelo site da Estilo Nativo e gostaria de mais informações." href="#contato">(14) 99819-2629</a></dd></div>
         <div><dt>Instagram</dt><dd><a data-cfg-href="INSTAGRAM_URL" href="https://www.instagram.com/estilonativopaisagismo/" target="_blank" rel="noopener">@estilonativopaisagismo</a></dd></div>
-        <!-- PENDENTE: incluir linha "Horário" quando dias e horários forem confirmados (CONFIG.HORARIO) -->
+        <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/estilonativopaisagismo/" target="_blank" rel="noopener">Estilo Nativo Paisagismo</a></dd></div>
+        <div><dt>Horário</dt><dd>Segunda a sexta: 8h às 18h<br>Sábado: 8h às 14h<br>Domingo: fechado</dd></div>
       </dl>
       <div class="visit__actions" data-reveal style="--d:260ms">
-        <a class="btn" data-wa="Olá! Gostaria de solicitar um orçamento com a Estilo Nativo." href="#contato">Falar no WhatsApp <span class="arr" aria-hidden="true">↗</span></a>
-        <a class="btn btn--ghost" data-cfg-href="MAPS_URL" href="https://www.google.com/maps/search/?api=1&amp;query=Estilo%20Nativo%20Paisagismo%2C%20Av.%20Gast%C3%A3o%20Vidigal%2C%201000%2C%20Ourinhos%20-%20SP" target="_blank" rel="noopener">Como chegar <span class="arr" aria-hidden="true">↗</span></a>
+        <a class="btn" data-wa="Olá! Gostaria de solicitar um orçamento com a Estilo Nativo." href="#contato">Falar no WhatsApp <span class="arr" aria-hidden="true"></span></a>
+        <a class="btn btn--soft" data-cfg-href="MAPS_URL" href="https://www.google.com/maps/search/?api=1&amp;query=Estilo%20Nativo%20Paisagismo%2C%20Av.%20Gast%C3%A3o%20Vidigal%2C%201000%2C%20Ourinhos%20-%20SP" target="_blank" rel="noopener">Como chegar <span class="arr" aria-hidden="true"></span></a>
       </div>
     </div>
     <div class="quotes">
@@ -1073,14 +1010,14 @@ html.rm{scroll-behavior:auto}
 
 <!-- ============ CTA FINAL ============ -->
 <section class="cta on-dark" aria-labelledby="cta-title">
-  <div class="cta__bg"><img src="cta-jardim.webp" alt="" width="1600" height="1067" loading="lazy" data-speed="0.14" data-scale="1.12"></div>
+  <div class="cta__bg"><img src="jardim-vertical-piscina.webp" alt="" width="1024" height="1008" loading="lazy" data-speed="0.14" data-scale="1.12"></div>
   <div class="wrap">
-    <span class="eyebrow" data-reveal>Vamos conversar</span>
-    <h2 id="cta-title" data-reveal="blur" style="--d:80ms">Seu próximo projeto começa com uma <em>conversa.</em></h2>
+    <h2 id="cta-title" data-reveal="blur" style="--d:80ms">Seu jardim começa com uma conversa.</h2>
     <p data-reveal style="--d:160ms">Conte para nós o que você imagina para seu jardim. Entre em contato com a Estilo Nativo e descubra as soluções que fazem sentido para o seu espaço.</p>
     <div class="cta__actions" data-reveal style="--d:240ms">
-      <a class="btn btn--light" data-wa="Olá! Gostaria de solicitar um orçamento com a Estilo Nativo. Posso enviar fotos do meu espaço?" href="#contato">Solicitar orçamento pelo WhatsApp <span class="arr" aria-hidden="true">↗</span></a>
-      <a class="btn btn--ghost" href="#servicos">Conhecer nossos serviços</a>
+      <a class="btn btn--light" data-wa="Olá! Gostaria de solicitar um orçamento com a Estilo Nativo. Posso enviar fotos do meu espaço?" href="#contato">Solicitar orçamento pelo WhatsApp <span class="arr" aria-hidden="true"></span></a>
+      <a class="btn btn--soft" href="#servicos">Conhecer nossos serviços <span class="arr arr--down" aria-hidden="true"></span></a>
+      <p class="cta__meta">(14) 99819-2629 · Av. Gastão Vidigal, 1000, Ourinhos<br>Seg. a sex. 8h às 18h · Sáb. 8h às 14h</p>
     </div>
   </div>
 </section>
@@ -1096,7 +1033,7 @@ html.rm{scroll-behavior:auto}
         <p>Paisagismo, jardins verticais, irrigação automática, manutenção de jardins, nutrição vegetal e loja de jardinagem em Ourinhos – SP.</p>
       </div>
       <div>
-        <h3>Navegação</h3>
+        <h2 class="footer__h">Navegação</h2>
         <ul>
           <li><a href="#inicio">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
@@ -1106,7 +1043,7 @@ html.rm{scroll-behavior:auto}
         </ul>
       </div>
       <div>
-        <h3>Serviços</h3>
+        <h2 class="footer__h">Serviços</h2>
         <ul>
           <li><a href="#servico-vertical">Jardim vertical</a></li>
           <li><a href="#servico-irrigacao">Irrigação automática</a></li>
@@ -1116,11 +1053,13 @@ html.rm{scroll-behavior:auto}
         </ul>
       </div>
       <div>
-        <h3>Contato</h3>
+        <h2 class="footer__h">Contato</h2>
         <address>Av. Gastão Vidigal, 1000 – Jardim Matilde<br>Ourinhos – SP, 19901-010</address>
+        <p style="margin:10px 0 0">Seg. a sex.: 8h às 18h<br>Sáb.: 8h às 14h · Dom.: fechado</p>
         <ul style="margin-top:10px">
           <li><a data-wa="Olá! Vim pelo site da Estilo Nativo e gostaria de mais informações." href="#contato">WhatsApp: (14) 99819-2629</a></li>
           <li><a href="https://www.instagram.com/estilonativopaisagismo/" target="_blank" rel="noopener">Instagram @estilonativopaisagismo</a></li>
+          <li><a href="https://www.facebook.com/estilonativopaisagismo/" target="_blank" rel="noopener">Facebook</a></li>
         </ul>
       </div>
     </div>
@@ -1141,7 +1080,7 @@ html.rm{scroll-behavior:auto}
 <div class="mbar" role="region" aria-label="Contato rápido">
   <a class="mbar__wa" data-wa="Olá! Vim pelo site da Estilo Nativo e gostaria de solicitar um orçamento." href="#contato">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3Z"/></svg>
-    Pedir orçamento
+    Solicitar orçamento
   </a>
   <a class="mbar__map" data-cfg-href="MAPS_URL" href="https://www.google.com/maps/search/?api=1&amp;query=Estilo%20Nativo%20Paisagismo%2C%20Av.%20Gast%C3%A3o%20Vidigal%2C%201000%2C%20Ourinhos%20-%20SP" target="_blank" rel="noopener">Rotas</a>
 </div>
@@ -1154,10 +1093,10 @@ const CONFIG = {
   // WhatsApp oficial (perfil do Google): (14) 99819-2629 → formato internacional, só números
   WHATSAPP_NUMBER: "5514998192629",
   INSTAGRAM_URL: "https://www.instagram.com/estilonativopaisagismo/",
-  FACEBOOK_URL: "",   // PENDENTE: link da página do Facebook
+  FACEBOOK_URL: "https://www.facebook.com/estilonativopaisagismo/",
   MAPS_URL: "https://www.google.com/maps/search/?api=1&query=" +
             encodeURIComponent("Estilo Nativo Paisagismo, Av. Gastão Vidigal, 1000, Ourinhos - SP"),
-  HORARIO: "",        // PENDENTE: dias e horários de atendimento
+  HORARIO: "Seg. a sex.: 8h às 18h · Sáb.: 8h às 14h · Dom.: fechado",
   CNPJ: ""            // PENDENTE: CNPJ e razão social
 };
 
@@ -1242,7 +1181,7 @@ function waLink(message) {
     nav.classList.toggle("is-open", open);
     burger.setAttribute("aria-expanded", String(open));
     burger.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
-    if (open) { mnav.hidden = false; requestAnimationFrame(() => mnav.querySelector("a").focus()); }
+    if (open) { mnav.hidden = false; setTimeout(() => mnav.querySelector("a").focus(), 60); }
     else { setTimeout(() => { if (!nav.classList.contains("is-open")) mnav.hidden = true; }, 360); }
     document.body.style.overflow = open ? "hidden" : "";
   }
@@ -1284,7 +1223,6 @@ function waLink(message) {
       { opacity: 1, transform: "none", filter: "blur(0)" }
     ];
     run(nav, [{ opacity: 0, transform: "translateY(-18px)" }, { opacity: 1, transform: "none" }], 0, 800);
-    run(document.querySelector('[data-intro="tag"]'), rise(6), 120, 900);
     run(document.querySelector('[data-intro="l1"]'), rise(14), 220, 1100);
     run(document.querySelector('[data-intro="l2"]'), rise(14), 360, 1100);
     run(document.querySelector('[data-intro="sub"]'), [{ opacity: 0, transform: "translateY(14px)" }, { opacity: 1, transform: "none" }], 640, 900);
@@ -1292,7 +1230,6 @@ function waLink(message) {
     run(document.querySelector('[data-intro="cta2"]'), [{ opacity: 0, transform: "translateY(12px)" }, { opacity: 1, transform: "none" }], 860, 800);
     document.querySelectorAll('[data-intro="card"]').forEach((el, i) =>
       run(el, [{ opacity: 0, transform: "translate3d(0,90px,0) rotateX(14deg) scale(.96)" }, { opacity: 1, transform: "none" }], 900 + i * 120, 1100));
-    run(document.querySelector('[data-intro="cue"]'), [{ opacity: 0 }, { opacity: 1 }], 1500, 600);
     run(document.querySelector(".intro-bg"), [{ transform: "scale(1.12)", filter: "blur(6px)" }, { transform: "scale(1)", filter: "blur(0)" }], 0, 1900);
     document.querySelectorAll(".intro-leaf").forEach((el, i) =>
       run(el, [{ opacity: 0, transform: `translate3d(${i % 2 ? 60 : -60}px, 30px, 0)` }, { opacity: 1, transform: "translate3d(0,0,0)" }], 200 + i * 120, 1600));
@@ -1312,8 +1249,6 @@ function waLink(message) {
         raf = requestAnimationFrame(() => {
           el.style.setProperty("--ry", ((px - .5) * max).toFixed(2) + "deg");
           el.style.setProperty("--rx", ((.5 - py) * max).toFixed(2) + "deg");
-          el.style.setProperty("--gx", (px * 100).toFixed(1) + "%");
-          el.style.setProperty("--gy", (py * 100).toFixed(1) + "%");
         });
       });
       el.addEventListener("pointerleave", () => {
@@ -1338,7 +1273,7 @@ function waLink(message) {
     lbIdx = (i + cards.length) % cards.length;
     const c = cards[lbIdx], img = c.querySelector("img");
     lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt;
-    lbCap.textContent = c.dataset.title + " — " + c.dataset.text;
+    lbCap.textContent = c.dataset.title + ". " + c.dataset.text;
   }
   cards.forEach((c, i) => c.addEventListener("click", () => {
     showLb(i);
@@ -1462,7 +1397,7 @@ function waLink(message) {
       const idx = Math.round(f);
       if (idx !== activeIdx) {
         activeIdx = idx;
-        projNum.textContent = String(idx + 1).padStart(2, "0");
+        projNum.textContent = String(idx + 1);
         projCap.innerHTML = "";
         const s = document.createElement("strong"); s.textContent = cards[idx].dataset.title;
         const t = document.createElement("span"); t.textContent = cards[idx].dataset.text;
@@ -1483,5 +1418,6 @@ function waLink(message) {
   measure(); frame();
 })();
 </script>
+
 </body>
 </html>
